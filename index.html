@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BanditBot Documentation</title>
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-    <script src="https://unpkg.com/marked/marked.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism-tomorrow.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/plugins/autoloader/prism-autoloader.min.js"></script>
@@ -248,11 +244,76 @@
     </style>
 </head>
 <body>
-    <div id="root"></div>
+    <div class="container">
+        <nav class="sidebar">
+            <h1>📚 BanditBot</h1>
+            <a class="nav-item active" data-doc="home">
+                <span class="emoji">🏠</span>
+                Home
+            </a>
+            <a class="nav-item" data-doc="commands">
+                <span class="emoji">📖</span>
+                Commands
+            </a>
+            <a class="nav-item" data-doc="api">
+                <span class="emoji">🔧</span>
+                API Reference
+            </a>
+            <a class="nav-item" data-doc="actions">
+                <span class="emoji">⚡</span>
+                Actions System
+            </a>
+            <a class="nav-item" data-doc="guide">
+                <span class="emoji">📚</span>
+                User Guide
+            </a>
+        </nav>
+        
+        <main class="content">
+            <div class="doc-content">
+                <div id="error-container"></div>
+                <div id="loading-container" style="display: none;">
+                    <div class="loading">
+                        <h3>Loading documentation...</h3>
+                        <p>Please wait while we fetch the content.</p>
+                    </div>
+                </div>
+                <div id="content-container">
+                    <div class="home-content">
+                        <h1>🤖 BanditBot Documentation</h1>
+                        <p>Comprehensive documentation for the BanditBot Discord moderation system</p>
+                        <p><em>Dynamic documentation with instant navigation and beautiful markdown rendering</em></p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <div class="emoji">📖</div>
+                                <h3>Commands</h3>
+                                <p>Complete command reference with examples</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">🔧</div>
+                                <h3>API</h3>
+                                <p>REST endpoints and integration guide</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">⚡</div>
+                                <h3>Actions</h3>
+                                <p>Action system and configuration</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">📚</div>
+                                <h3>User Guide</h3>
+                                <p>Setup and best practices</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 
-    <script type="text/babel">
-        const { useState, useEffect, useCallback } = React;
-
+    <script src="https://unpkg.com/marked@5.1.1/marked.min.js"></script>
+    <script>
         const DOCS = {
             home: { title: 'Home', emoji: '🏠', file: null },
             commands: { title: 'Commands', emoji: '📖', file: 'COMMANDS.md' },
@@ -261,138 +322,155 @@
             guide: { title: 'User Guide', emoji: '📚', file: 'USER_GUIDE.md' }
         };
 
-        function DocumentationApp() {
-            const [currentDoc, setCurrentDoc] = useState('home');
-            const [content, setContent] = useState('');
-            const [loading, setLoading] = useState(false);
-            const [error, setError] = useState(null);
+        let currentDoc = 'home';
 
-            const loadMarkdown = useCallback(async (filename) => {
-                if (!filename) return '';
-                
-                setLoading(true);
-                setError(null);
-                
-                try {
-                    const response = await fetch(filename);
-                    if (!response.ok) {
-                        throw new Error(`Failed to load ${filename}`);
-                    }
-                    const text = await response.text();
-                    return text;
-                } catch (err) {
-                    setError(`Error loading documentation: ${err.message}`);
-                    return '';
-                } finally {
-                    setLoading(false);
-                }
-            }, []);
-
-            const navigateToDoc = useCallback(async (docKey) => {
-                setCurrentDoc(docKey);
-                window.location.hash = docKey === 'home' ? '' : docKey;
-                
-                const doc = DOCS[docKey];
-                if (doc.file) {
-                    const markdown = await loadMarkdown(doc.file);
-                    if (markdown) {
-                        const html = marked.parse(markdown);
-                        setContent(html);
-                        // Trigger Prism highlighting after content is set
-                        setTimeout(() => {
-                            if (window.Prism) {
-                                window.Prism.highlightAll();
-                            }
-                        }, 100);
-                    }
-                } else {
-                    setContent('');
-                }
-            }, [loadMarkdown]);
-
-            useEffect(() => {
-                // Handle initial hash and hash changes
-                const handleHashChange = () => {
-                    const hash = window.location.hash.slice(1);
-                    const docKey = hash && DOCS[hash] ? hash : 'home';
-                    if (docKey !== currentDoc) {
-                        navigateToDoc(docKey);
-                    }
-                };
-
-                handleHashChange();
-                window.addEventListener('hashchange', handleHashChange);
-                return () => window.removeEventListener('hashchange', handleHashChange);
-            }, [navigateToDoc, currentDoc]);
-
-            const renderHomeContent = () => (
-                <div className="home-content">
-                    <h1>🤖 BanditBot Documentation</h1>
-                    <p>Comprehensive documentation for the BanditBot Discord moderation system</p>
-                    <p><em>Dynamic React-powered documentation with instant navigation and beautiful markdown rendering</em></p>
-                    
-                    <div className="features-grid">
-                        <div className="feature">
-                            <div className="emoji">📖</div>
-                            <h3>Commands</h3>
-                            <p>Complete command reference with examples</p>
-                        </div>
-                        <div className="feature">
-                            <div className="emoji">🔧</div>
-                            <h3>API</h3>
-                            <p>REST endpoints and integration guide</p>
-                        </div>
-                        <div className="feature">
-                            <div className="emoji">⚡</div>
-                            <h3>Actions</h3>
-                            <p>Action system and configuration</p>
-                        </div>
-                        <div className="feature">
-                            <div className="emoji">📚</div>
-                            <h3>User Guide</h3>
-                            <p>Setup and best practices</p>
-                        </div>
-                    </div>
-                </div>
-            );
-
-            return (
-                <div className="container">
-                    <nav className="sidebar">
-                        <h1>📚 BanditBot</h1>
-                        {Object.entries(DOCS).map(([key, doc]) => (
-                            <a
-                                key={key}
-                                className={`nav-item ${currentDoc === key ? 'active' : ''}`}
-                                onClick={() => navigateToDoc(key)}
-                            >
-                                <span className="emoji">{doc.emoji}</span>
-                                {doc.title}
-                            </a>
-                        ))}
-                    </nav>
-                    
-                    <main className="content">
-                        <div className="doc-content">
-                            {error && <div className="error">{error}</div>}
-                            
-                            {loading ? (
-                                <div className="loading">
-                                    <h3>Loading documentation...</h3>
-                                    <p>Please wait while we fetch the content.</p>
-                                </div>
-                            ) : currentDoc === 'home' ? (
-                                renderHomeContent()
-                            ) : (
-                                <div dangerouslySetInnerHTML={{ __html: content }} />
-                            )}
-                        </div>
-                    </main>
-                </div>
-            );
+        function showError(message) {
+            const errorEl = document.getElementById('error-container');
+            errorEl.innerHTML = `<div class="error">${message}</div>`;
         }
 
-        ReactDOM.render(<DocumentationApp />, document.getElementById('root'));
+        function clearError() {
+            document.getElementById('error-container').innerHTML = '';
+        }
+
+        function showLoading(show) {
+            document.getElementById('loading-container').style.display = show ? 'block' : 'none';
+        }
+
+        function setContent(html) {
+            document.getElementById('content-container').innerHTML = html;
+        }
+
+        async function loadMarkdown(filename) {
+            if (!filename) return '';
+            
+            showLoading(true);
+            clearError();
+            
+            try {
+                console.log(`Loading ${filename}...`);
+                const response = await fetch(filename);
+                console.log(`Response status: ${response.status}`);
+                
+                if (!response.ok) {
+                    throw new Error(`Failed to load ${filename}: ${response.status} ${response.statusText}`);
+                }
+                
+                const text = await response.text();
+                console.log(`Loaded ${text.length} characters from ${filename}`);
+                return text;
+            } catch (err) {
+                console.error('Error loading markdown:', err);
+                showError(`Error loading documentation: ${err.message}`);
+                return '';
+            } finally {
+                showLoading(false);
+            }
+        }
+
+        async function navigateToDoc(docKey) {
+            // Update active nav item
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.doc === docKey) {
+                    item.classList.add('active');
+                }
+            });
+            
+            currentDoc = docKey;
+            window.location.hash = docKey === 'home' ? '' : docKey;
+            
+            const doc = DOCS[docKey];
+            if (doc.file) {
+                const markdown = await loadMarkdown(doc.file);
+                if (markdown) {
+                    console.log('Converting markdown to HTML...');
+                    // Check if marked is available and use appropriate method
+                    let html;
+                    if (typeof marked !== 'undefined') {
+                        if (typeof marked.parse === 'function') {
+                            html = marked.parse(markdown);
+                        } else if (typeof marked === 'function') {
+                            html = marked(markdown);
+                        } else {
+                            console.error('marked library not properly loaded');
+                            showError('Markdown parser not available');
+                            return;
+                        }
+                    } else {
+                        console.error('marked library not loaded');
+                        showError('Markdown parser not loaded');
+                        return;
+                    }
+                    
+                    console.log('HTML generated, length:', html.length);
+                    setContent(html);
+                    
+                    // Trigger Prism highlighting after content is set
+                    setTimeout(() => {
+                        if (window.Prism) {
+                            window.Prism.highlightAll();
+                        }
+                    }, 100);
+                }
+            } else {
+                // Home page
+                setContent(`
+                    <div class="home-content">
+                        <h1>🤖 BanditBot Documentation</h1>
+                        <p>Comprehensive documentation for the BanditBot Discord moderation system</p>
+                        <p><em>Dynamic documentation with instant navigation and beautiful markdown rendering</em></p>
+                        
+                        <div class="features-grid">
+                            <div class="feature">
+                                <div class="emoji">📖</div>
+                                <h3>Commands</h3>
+                                <p>Complete command reference with examples</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">🔧</div>
+                                <h3>API</h3>
+                                <p>REST endpoints and integration guide</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">⚡</div>
+                                <h3>Actions</h3>
+                                <p>Action system and configuration</p>
+                            </div>
+                            <div class="feature">
+                                <div class="emoji">📚</div>
+                                <h3>User Guide</h3>
+                                <p>Setup and best practices</p>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            }
+        }
+
+        // Handle hash changes
+        function handleHashChange() {
+            const hash = window.location.hash.slice(1);
+            const docKey = hash && DOCS[hash] ? hash : 'home';
+            if (docKey !== currentDoc) {
+                navigateToDoc(docKey);
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up navigation
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', function() {
+                    const docKey = this.dataset.doc;
+                    navigateToDoc(docKey);
+                });
+            });
+
+            // Handle initial hash and hash changes
+            handleHashChange();
+            window.addEventListener('hashchange', handleHashChange);
+        });
     </script>
 </body>
 </html>
