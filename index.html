@@ -131,6 +131,20 @@
             padding: 2rem;
             background: #f8f9fa;
             border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .feature:hover {
+            background: #e9ecef;
+            border-color: #3498db;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+        }
+        
+        .feature:active {
+            transform: translateY(-2px);
         }
         
         .feature .emoji {
@@ -285,22 +299,22 @@
                         <p><em>Dynamic documentation with instant navigation and beautiful markdown rendering</em></p>
                         
                         <div class="features-grid">
-                            <div class="feature">
+                            <div class="feature" data-doc="commands">
                                 <div class="emoji">📖</div>
                                 <h3>Commands</h3>
                                 <p>Complete command reference with examples</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="api">
                                 <div class="emoji">🔧</div>
                                 <h3>API</h3>
                                 <p>REST endpoints and integration guide</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="actions">
                                 <div class="emoji">⚡</div>
                                 <h3>Actions</h3>
                                 <p>Action system and configuration</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="guide">
                                 <div class="emoji">📚</div>
                                 <h3>User Guide</h3>
                                 <p>Setup and best practices</p>
@@ -430,22 +444,22 @@
                         <p><em>Dynamic documentation with instant navigation and beautiful markdown rendering</em></p>
                         
                         <div class="features-grid">
-                            <div class="feature">
+                            <div class="feature" data-doc="commands">
                                 <div class="emoji">📖</div>
                                 <h3>Commands</h3>
                                 <p>Complete command reference with examples</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="api">
                                 <div class="emoji">🔧</div>
                                 <h3>API</h3>
                                 <p>REST endpoints and integration guide</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="actions">
                                 <div class="emoji">⚡</div>
                                 <h3>Actions</h3>
                                 <p>Action system and configuration</p>
                             </div>
-                            <div class="feature">
+                            <div class="feature" data-doc="guide">
                                 <div class="emoji">📚</div>
                                 <h3>User Guide</h3>
                                 <p>Setup and best practices</p>
@@ -453,7 +467,20 @@
                         </div>
                     </div>
                 `);
+                
+                // Set up click handlers for feature boxes
+                setupFeatureBoxes();
             }
+        }
+        
+        // Set up click handlers for feature boxes on home page
+        function setupFeatureBoxes() {
+            document.querySelectorAll('.feature[data-doc]').forEach(feature => {
+                feature.addEventListener('click', function() {
+                    const docKey = this.dataset.doc;
+                    navigateToDoc(docKey);
+                });
+            });
         }
         
         // Set up click handlers for anchor links within content
@@ -546,6 +573,9 @@
                     navigateToDoc(docKey);
                 });
             });
+
+            // Set up feature box click handlers (for initial home page load)
+            setupFeatureBoxes();
 
             // Handle initial hash and hash changes
             handleHashChange();
