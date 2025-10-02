@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-02 02:11:55 UTC*
+*Generated automatically on 2025-10-02 06:43:47 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 47 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 54 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -773,6 +773,41 @@ actions:
 
 ---
 
+#### `test_regex`
+
+**Description:** Test a regex pattern against a test string using the same pipeline as triggers.
+
+**Configuration:**
+- pattern: Regex pattern to test (parameter name or literal string)
+- test_string: String to test pattern against (parameter name or literal string)
+- flags: Optional regex flags string (i=case insensitive, m=multiline, s=dotall)
+- Returns:
+- Sends a message with test results including match status and captured groups
+
+**Function:** `test_regex_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "test_regex"
+    # Add configuration parameters here
+```
+
+---
+
+#### `text_replace`
+
+**Function:** `text_replace_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "text_replace"
+    # Add configuration parameters here
+```
+
+---
+
 #### `whois`
 
 **Description:** Display detailed information about a user.
@@ -816,6 +851,42 @@ actions:
 
 ---
 
+#### `list_action_flows`
+
+**Description:** List all configured action flows.
+
+**Configuration:**
+- embed: Whether to use embed format (default: true)
+
+**Function:** `list_action_flows_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "list_action_flows"
+    # Add configuration parameters here
+```
+
+---
+
+#### `list_pattern_groups`
+
+**Description:** List all available pattern groups.
+
+**Configuration:**
+- embed: Whether to use embed format (default: true)
+
+**Function:** `list_pattern_groups_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "list_pattern_groups"
+    # Add configuration parameters here
+```
+
+---
+
 #### `ocr_image_url`
 
 **Function:** `ocr_image_url_action`
@@ -824,6 +895,63 @@ actions:
 ```yaml
 actions:
   - type: "ocr_image_url"
+    # Add configuration parameters here
+```
+
+---
+
+#### `show_action_flow`
+
+**Description:** Show the detailed configuration of a specific action flow.
+
+**Configuration:**
+- flow_name: Parameter name containing the action flow name
+- embed: Whether to use embed format (default: true)
+
+**Function:** `show_action_flow_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "show_action_flow"
+    # Add configuration parameters here
+```
+
+---
+
+#### `show_pattern_group`
+
+**Description:** Show the details of a specific pattern group.
+
+**Configuration:**
+- group_name: Parameter name containing the pattern group name
+- embed: Whether to use embed format (default: true)
+
+**Function:** `show_pattern_group_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "show_pattern_group"
+    # Add configuration parameters here
+```
+
+---
+
+#### `show_trigger`
+
+**Description:** Show the detailed configuration of a specific trigger.
+
+**Configuration:**
+- trigger_name: Parameter name containing the trigger name
+- embed: Whether to use embed format (default: true)
+
+**Function:** `show_trigger_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "show_trigger"
     # Add configuration parameters here
 ```
 
@@ -936,4 +1064,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 02:11:55 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 06:43:47 UTC*

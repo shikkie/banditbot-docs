@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-02 02:11:56 UTC*
+*Generated automatically on 2025-10-02 06:43:48 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **38 custom commands** for various functions
+- **45 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -93,7 +93,7 @@ Temporarily detain a user by assigning the 'detained' role with a fun arrest mes
 Ban a user from the server
 *Requires: Admin*
 
-#### `?createrole <name> [color]`
+#### `?createrole [color] <name>`
 Create a new role in the server
 *Requires: Admin*
 
@@ -128,6 +128,14 @@ Eject a user by assigning the 'detained' role with an ejection message
 #### `?kick <user> [reason]`
 Kick a user from the server
 *Requires: Moderator, Admin*
+
+#### `?list_action_flows`
+List all configured action flows
+*Requires: Moderator*
+
+#### `?list_pattern_groups`
+List all available pattern groups
+*Requires: Moderator*
 
 #### `?list_triggers`
 List all configured regex triggers and their actions
@@ -165,13 +173,29 @@ Bulk delete messages from the current channel (supports up to 999 messages + com
 Release a user by removing the 'detained' role
 *Requires: Moderator*
 
+#### `?show_action_flow <flow_name>`
+Show the detailed configuration of a specific action flow
+*Requires: Moderator*
+
+#### `?show_pattern_group <group_name>`
+Show the details of a specific pattern group
+*Requires: Moderator*
+
 #### `?show_sticky <user>`
 Show what sticky roles a user has configured
+*Requires: Moderator*
+
+#### `?show_trigger <trigger_name>`
+Show the detailed configuration of a specific trigger
 *Requires: Moderator*
 
 #### `?slowmode <delay> [reason]`
 Set channel slowmode delay
 *Requires: Moderator, Admin*
+
+#### `?test_replace <text> <find> <replace>`
+Test the text_replace action with a simple example
+*Requires: Moderator*
 
 #### `?thotbgone <user> [reason]`
 Detain a user with a thot-be-gone themed message and assign the 'detained' role
@@ -228,6 +252,11 @@ Tell a random dad joke from the bot's collection
 #### `?worm`
 Post a cute worm image with descriptive text
 
+### Configuration Commands
+
+#### `?test_regex [flags] <pattern> <test_string>`
+Test a regex pattern against a test string using the same pipeline as triggers
+
 
 ## 🛡️ Moderation Features
 
@@ -280,6 +309,10 @@ BanditBot can automatically respond to message patterns using regex triggers:
 **Pattern:** `\bchloe\b`
 **Response:** Responds when someone mentions Chloe
 
+### instagram_rewriter
+**Pattern:** `https://instagram\.com/([^\s]+)`
+**Response:** Rewrites Instagram links to ddinstagram.com for better viewing
+
 ### null_mention_gay_react
 **Pattern:** `<@!?100418001488064512>`
 **Response:** Reacts with GAY when specific user is mentioned
@@ -288,17 +321,13 @@ BanditBot can automatically respond to message patterns using regex triggers:
 **Pattern:** `\bsimon\b`
 **Response:** Responds when someone mentions simon
 
-### zoomer_fr
-**Pattern:** `\bfr\b`
-**Response:** Detects 'fr' zoomer slang from unverified users
+### twitter_rewriter
+**Pattern:** `https://(x\.com|twitter\.com)/([^\s]+)`
+**Response:** Rewrites Twitter/X links to vxtwitter.com for better viewing
 
-### zoomer_no_cap
-**Pattern:** `\bno cap\b`
-**Response:** Detects 'no cap' zoomer slang from unverified users
-
-### zoomer_wsp
-**Pattern:** `\bwsp\b`
-**Response:** Detects 'wsp' zoomer slang from unverified users
+### zoomer_slang
+**Pattern:** `\b(fr|no cap|wsp|ong)\b`
+**Response:** Detects zoomer slang from unverified users using pattern group
 
 
 ## 🌐 Web Configuration
@@ -376,10 +405,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-02 02:11:56 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-02 06:43:48 UTC*
 
 **Bot Statistics:**
-- Commands: 38
+- Commands: 45
 - Triggers: 7
 - Action Flows: 2
 - Event Handlers: 24

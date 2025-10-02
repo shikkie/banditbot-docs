@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-02 02:11:55 UTC*
+*Generated automatically on 2025-10-02 06:43:47 UTC*
 
 ## Overview
 
@@ -266,6 +266,19 @@ curl -X POST http://localhost:5000/api/reload \\
 
 ---
 
+#### `POST /api/regex-test`
+
+**Description:** Test regex patterns against test strings.
+
+**Example:**
+```bash
+curl -X POST http://localhost:5000/api/regex-test \\
+  -H "Content-Type: application/json" \\
+  -d '{"key": "value"}'
+```
+
+---
+
 ## 📊 Database Schema
 
 The following collections are used by BanditBot:
@@ -418,4 +431,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 02:11:55 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 06:43:47 UTC*

@@ -1,10 +1,10 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-02 02:11:55 UTC*
+*Generated automatically on 2025-10-02 06:43:47 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 38 commands, 7 triggers, 2 action flows, and 24 event handlers.
+BanditBot features a sophisticated modular command system with 45 commands, 7 triggers, 2 action flows, and 24 event handlers.
 
 ## 🤖 Bot Commands
 
@@ -83,11 +83,11 @@ BanditBot features a sophisticated modular command system with 38 commands, 7 tr
 
 **Description:** Create a new role in the server
 
-**Usage:** `?createrole <name> [color]`
+**Usage:** `?createrole [color] <name>`
 
 **Parameters:**
-- **name** (required) - *string* - Name for the new role
 - **color** (optional) - *string* - Role color (hex code or color name)
+- **name** (required) - *string* - Name for the new role
 
 **Required Roles:** Admin
 
@@ -265,6 +265,32 @@ BanditBot features a sophisticated modular command system with 38 commands, 7 tr
 
 ---
 
+### `?list_action_flows`
+
+**Description:** List all configured action flows
+
+**Usage:** `?list_action_flows`
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **list_action_flows**
+
+---
+
+### `?list_pattern_groups`
+
+**Description:** List all available pattern groups
+
+**Usage:** `?list_pattern_groups`
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **list_pattern_groups**
+
+---
+
 ### `?list_triggers`
 
 **Description:** List all configured regex triggers and their actions
@@ -426,6 +452,38 @@ BanditBot features a sophisticated modular command system with 38 commands, 7 tr
 
 ---
 
+### `?show_action_flow`
+
+**Description:** Show the detailed configuration of a specific action flow
+
+**Usage:** `?show_action_flow <flow_name>`
+
+**Parameters:**
+- **flow_name** (required) - *string* - Name of the action flow to display
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **show_action_flow**
+
+---
+
+### `?show_pattern_group`
+
+**Description:** Show the details of a specific pattern group
+
+**Usage:** `?show_pattern_group <group_name>`
+
+**Parameters:**
+- **group_name** (required) - *string* - Name of the pattern group to display
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **show_pattern_group**
+
+---
+
 ### `?show_sticky`
 
 **Description:** Show what sticky roles a user has configured
@@ -439,6 +497,22 @@ BanditBot features a sophisticated modular command system with 38 commands, 7 tr
 
 **Actions:**
 - **show_sticky**
+
+---
+
+### `?show_trigger`
+
+**Description:** Show the detailed configuration of a specific trigger
+
+**Usage:** `?show_trigger <trigger_name>`
+
+**Parameters:**
+- **trigger_name** (required) - *string* - Name of the trigger to display
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **show_trigger**
 
 ---
 
@@ -496,6 +570,44 @@ BanditBot features a sophisticated modular command system with 38 commands, 7 tr
 - **stickyrole_rem**: Apply role `{role}`
 - **reply**: `✅ Sticky role removed: {role} from {user}`
 - **log**: `User {user} had the sticky role {role} removed`
+
+---
+
+### `?test_regex`
+
+**Description:** Test a regex pattern against a test string using the same pipeline as triggers
+
+**Usage:** `?test_regex [flags] <pattern> <test_string>`
+
+**Parameters:**
+- **flags** (optional) - *string* - Optional regex flags (i=case insensitive, m=multiline, s=dotall)
+- **pattern** (required) - *string* - The regex pattern to test (e.g., 'word', '(?i)case', etc.)
+- **test_string** (required) - *string* - Collects all remaining arguments - The string to test the pattern against
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **test_regex**
+
+---
+
+### `?test_replace`
+
+**Description:** Test the text_replace action with a simple example
+
+**Usage:** `?test_replace <text> <find> <replace>`
+
+**Parameters:**
+- **text** (required) - *string* - Text to perform replacement on
+- **find** (required) - *string* - Text to find
+- **replace** (required) - *string* - Text to replace with
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **text_replace**
+- **reply**: `Original: {text}
+Result: {result}`
 
 ---
 
@@ -677,6 +789,18 @@ These triggers automatically respond to message patterns:
 
 ---
 
+### instagram_rewriter
+
+**Pattern:** `https://instagram\.com/([^\s]+)`
+
+**Description:** Rewrites Instagram links to ddinstagram.com for better viewing
+
+**Actions:**
+- **text_replace**
+- **reply**: `📱 Better Instagram link: {rewritten_url}`
+
+---
+
 ### null_mention_gay_react
 
 **Pattern:** `<@!?100418001488064512>`
@@ -702,39 +826,25 @@ These triggers automatically respond to message patterns:
 
 ---
 
-### zoomer_fr
+### twitter_rewriter
 
-**Pattern:** `\bfr\b`
+**Pattern:** `https://(x\.com|twitter\.com)/([^\s]+)`
 
-**Description:** Detects 'fr' zoomer slang from unverified users
-
-**Required Roles:** unverified
+**Description:** Rewrites Twitter/X links to vxtwitter.com for better viewing
 
 **Actions:**
-- **action_flow**
+- **text_replace**
+- **reply**: `🐦 Better Twitter/X link: {rewritten_url}`
 
 ---
 
-### zoomer_no_cap
+### zoomer_slang
 
-**Pattern:** `\bno cap\b`
+**Pattern:** `\b(fr|no cap|wsp|ong)\b`
 
-**Description:** Detects 'no cap' zoomer slang from unverified users
+**Description:** Detects zoomer slang from unverified users using pattern group
 
-**Required Roles:** unverified
-
-**Actions:**
-- **action_flow**
-
----
-
-### zoomer_wsp
-
-**Pattern:** `\bwsp\b`
-
-**Description:** Detects 'wsp' zoomer slang from unverified users
-
-**Required Roles:** unverified
+**Required Roles:** bandit
 
 **Actions:**
 - **action_flow**
@@ -750,9 +860,7 @@ Reusable action sequences:
 **Description:** Ramming action for zoomer slang violations
 
 **Actions:**
-- **message**: `❌ {author_mention}, please use proper English. Zoo...`
-- **timeout**: Duration `30s`
-- **delete_message**
+- **message**: `{author_mention}, use proper English. "{match_1}" ...`
 
 ---
 
@@ -991,8 +1099,8 @@ Automatic responses to Discord events:
 
 ## ⚙️ Bot Configuration
 
-- **log_channel:** `bandit-logs`
-- **show_commands_on_unknown:** `False`
+- **modular_command_prefix:** `?`
+- **collection_caps:** `{'delayQueue': {'ttl_days': 7}}`
 
 
 ## 📞 Support
@@ -1006,4 +1114,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `modular_commands.yml`. Last updated: 2025-10-02 02:11:55 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-02 06:43:47 UTC*
