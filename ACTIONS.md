@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-02 01:10:36 UTC*
+*Generated automatically on 2025-10-02 01:41:42 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 38 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 47 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -74,6 +74,26 @@ actions:
 
 ---
 
+#### `slowmode`
+
+**Description:** Set channel slowmode delay.
+
+**Configuration:**
+- delay: Slowmode delay in seconds (0-21600, 0 disables)
+- channel: Parameter name containing the channel (optional, defaults to current)
+- reason: Reason for setting slowmode (optional)
+
+**Function:** `slowmode_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "slowmode"
+    # Add configuration parameters here
+```
+
+---
+
 #### `unlock_all_channels`
 
 **Description:** Unlock all text channels by restoring send_messages permission for @everyone role.
@@ -128,6 +148,19 @@ actions:
 
 ---
 
+#### `edit_message`
+
+**Function:** `edit_message_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "edit_message"
+    # Add configuration parameters here
+```
+
+---
+
 #### `message`
 
 **Description:** Send a message to a channel.
@@ -150,6 +183,19 @@ actions:
 ```yaml
 actions:
   - type: "message"
+    # Add configuration parameters here
+```
+
+---
+
+#### `pin_message`
+
+**Function:** `pin_message_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "pin_message"
     # Add configuration parameters here
 ```
 
@@ -181,8 +227,41 @@ actions:
 
 ---
 
+#### `unpin_message`
+
+**Function:** `unpin_message_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "unpin_message"
+    # Add configuration parameters here
+```
+
+---
+
 
 ### Moderation Actions
+
+#### `ban`
+
+**Description:** Ban a user from the server.
+
+**Configuration:**
+- user: Parameter name containing the user to ban (or direct reference)
+- reason: Reason for the ban (optional)
+- delete_message_days: Days of messages to delete (0-7, default: 1)
+
+**Function:** `ban_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ban"
+    # Add configuration parameters here
+```
+
+---
 
 #### `delete_message`
 
@@ -206,6 +285,25 @@ actions:
 ```yaml
 actions:
   - type: "delete_message"
+    # Add configuration parameters here
+```
+
+---
+
+#### `kick`
+
+**Description:** Kick a user from the server.
+
+**Configuration:**
+- user: Parameter name containing the user to kick (or direct reference)
+- reason: Reason for the kick (optional)
+
+**Function:** `kick_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "kick"
     # Add configuration parameters here
 ```
 
@@ -237,6 +335,25 @@ actions:
 
 ---
 
+#### `unban`
+
+**Description:** Unban a user from the server by user ID or username#discriminator.
+
+**Configuration:**
+- user: Parameter name containing the user ID or username#discriminator to unban
+- reason: Reason for the unban (optional)
+
+**Function:** `unban_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "unban"
+    # Add configuration parameters here
+```
+
+---
+
 
 ### Role Actions
 
@@ -248,6 +365,47 @@ actions:
 ```yaml
 actions:
   - type: "cache_user_roles"
+    # Add configuration parameters here
+```
+
+---
+
+#### `create_role`
+
+**Description:** Create a new role in the server.
+
+**Configuration:**
+- name: Parameter name containing the role name
+- color: Role color (hex code or color name, optional)
+- hoist: Whether role should be displayed separately (optional, default: false)
+- mentionable: Whether role can be mentioned (optional, default: false)
+- reason: Reason for creating the role (optional)
+
+**Function:** `create_role_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "create_role"
+    # Add configuration parameters here
+```
+
+---
+
+#### `delete_role`
+
+**Description:** Delete a role from the server.
+
+**Configuration:**
+- role: Parameter name containing the role to delete (or direct reference)
+- reason: Reason for deleting the role (optional)
+
+**Function:** `delete_role_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "delete_role"
     # Add configuration parameters here
 ```
 
@@ -778,4 +936,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 01:10:36 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 01:41:42 UTC*

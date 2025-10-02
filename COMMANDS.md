@@ -1,10 +1,10 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-02 01:10:36 UTC*
+*Generated automatically on 2025-10-02 01:41:42 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 30 commands, 7 triggers, 2 action flows, and 20 event handlers.
+BanditBot features a sophisticated modular command system with 38 commands, 7 triggers, 2 action flows, and 24 event handlers.
 
 ## 🤖 Bot Commands
 
@@ -48,6 +48,23 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 
 ---
 
+### `?ban`
+
+**Description:** Ban a user from the server
+
+**Usage:** `?ban <user> [reason]`
+
+**Parameters:**
+- **user** (required) - *user* - The user to ban (mention, username, or user ID)
+- **reason** (optional) - *string* - Collects all remaining arguments - Reason for the ban
+
+**Required Roles:** Admin
+
+**Actions:**
+- **ban**
+
+---
+
 ### `?coon`
 
 **Description:** Post a random cute raccoon image with accompanying text
@@ -59,6 +76,23 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 **Actions:**
 - **message**: `OMG LOOK ITS [{$texts:coon}]({$images:coon})`
 - **delete_message**
+
+---
+
+### `?createrole`
+
+**Description:** Create a new role in the server
+
+**Usage:** `?createrole <name> [color]`
+
+**Parameters:**
+- **name** (required) - *string* - Name for the new role
+- **color** (optional) - *string* - Role color (hex code or color name)
+
+**Required Roles:** Admin
+
+**Actions:**
+- **create_role**
 
 ---
 
@@ -117,6 +151,22 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 
 ---
 
+### `?deleterole`
+
+**Description:** Delete a role from the server
+
+**Usage:** `?deleterole <role>`
+
+**Parameters:**
+- **role** (required) - *role* - The role to delete (mention or name)
+
+**Required Roles:** Admin
+
+**Actions:**
+- **delete_role**: Apply role `{role}`
+
+---
+
 ### `?dn`
 
 **Description:** A fun 'deez nuts' meme response command
@@ -128,6 +178,22 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 **Actions:**
 - **reply**: `Hah! GOTEEEEEM`
 - **message**: `https://obj.shitpost.sh/obj/9c4a3233-f091-408a-94b...`
+
+---
+
+### `?editlast`
+
+**Description:** Edit the last bot message (for testing)
+
+**Usage:** `?editlast <message>`
+
+**Parameters:**
+- **message** (required) - *string* - Collects all remaining arguments - New message content
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **edit_message**: `{message}`
 
 ---
 
@@ -179,6 +245,23 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 - **message**: `📢 **Dad Joke Time!** {$texts:dadjokes}`
 - **react**
 - **delete_message**
+
+---
+
+### `?kick`
+
+**Description:** Kick a user from the server
+
+**Usage:** `?kick <user> [reason]`
+
+**Parameters:**
+- **user** (required) - *user* - The user to kick (mention, username, or user ID)
+- **reason** (optional) - *string* - Collects all remaining arguments - Reason for the kick
+
+**Required Roles:** Moderator, Admin
+
+**Actions:**
+- **kick**
 
 ---
 
@@ -295,6 +378,19 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 
 ---
 
+### `?pin`
+
+**Description:** Pin the last bot message in the channel
+
+**Usage:** `?pin`
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **pin_message**
+
+---
+
 ### `?purge`
 
 **Description:** Bulk delete messages from the current channel (supports up to 999 messages + command message, with automatic batching)
@@ -343,6 +439,23 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 
 **Actions:**
 - **show_sticky**
+
+---
+
+### `?slowmode`
+
+**Description:** Set channel slowmode delay
+
+**Usage:** `?slowmode <delay> [reason]`
+
+**Parameters:**
+- **delay** (required) - *integer* - Slowmode delay in seconds (0-21600, 0 disables)
+- **reason** (optional) - *string* - Collects all remaining arguments - Reason for setting slowmode
+
+**Required Roles:** Moderator, Admin
+
+**Actions:**
+- **slowmode**
 
 ---
 
@@ -436,6 +549,23 @@ BanditBot features a sophisticated modular command system with 30 commands, 7 tr
 
 **Actions:**
 - **reply**: `👋 Touch command received! Hello, {author}!`
+
+---
+
+### `?unban`
+
+**Description:** Unban a user from the server by user ID
+
+**Usage:** `?unban <user> [reason]`
+
+**Parameters:**
+- **user** (required) - *string* - The user ID to unban
+- **reason** (optional) - *string* - Collects all remaining arguments - Reason for the unban
+
+**Required Roles:** Admin
+
+**Actions:**
+- **unban**
 
 ---
 
@@ -712,6 +842,15 @@ Automatic responses to Discord events:
 
 ---
 
+### on_guild_update
+
+**Description:** Log server settings changes to the configured log channel
+
+**Actions:**
+- **chan_log**
+
+---
+
 ### on_image
 
 **Description:** Process images with OCR and log extracted text
@@ -814,6 +953,33 @@ Automatic responses to Discord events:
 
 ---
 
+### on_thread_create
+
+**Description:** Log thread creation to the configured log channel
+
+**Actions:**
+- **chan_log**
+
+---
+
+### on_thread_delete
+
+**Description:** Log thread deletion to the configured log channel
+
+**Actions:**
+- **chan_log**
+
+---
+
+### on_thread_update
+
+**Description:** Log thread updates to the configured log channel
+
+**Actions:**
+- **chan_log**
+
+---
+
 ### on_voice_state_update
 
 **Description:** Log voice channel activity to the configured log channel
@@ -840,4 +1006,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `modular_commands.yml`. Last updated: 2025-10-02 01:10:36 UTC*
+*This documentation is automatically generated from `modular_commands.yml`. Last updated: 2025-10-02 01:41:42 UTC*

@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-02 01:10:36 UTC*
+*Generated automatically on 2025-10-02 01:41:42 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **30 custom commands** for various functions
+- **38 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -89,6 +89,14 @@ Add a new regex trigger with specified actions
 Temporarily detain a user by assigning the 'detained' role with a fun arrest message
 *Requires: Moderator, Admin*
 
+#### `?ban <user> [reason]`
+Ban a user from the server
+*Requires: Admin*
+
+#### `?createrole <name> [color]`
+Create a new role in the server
+*Requires: Admin*
+
 #### `?defenestrate <user> [reason]`
 Defenestrate (throw out the window) a user by assigning the 'detained' role
 *Requires: Moderator, Admin*
@@ -101,12 +109,24 @@ Delete a regex trigger by name
 Schedule a delayed message to be sent to a channel
 *Requires: Moderator, Admin*
 
+#### `?deleterole <role>`
+Delete a role from the server
+*Requires: Admin*
+
+#### `?editlast <message>`
+Edit the last bot message (for testing)
+*Requires: Moderator*
+
 #### `?force_sticky <user>`
 Force apply all sticky roles for a user (testing and enforcement)
 *Requires: Moderator*
 
 #### `?gtfo <user> [reason]`
 Eject a user by assigning the 'detained' role with an ejection message
+*Requires: Moderator, Admin*
+
+#### `?kick <user> [reason]`
+Kick a user from the server
 *Requires: Moderator, Admin*
 
 #### `?list_triggers`
@@ -133,6 +153,10 @@ Add a moderation note for a user (creates a log entry without taking action)
 Show pending delay queue actions
 *Requires: Moderator, Admin*
 
+#### `?pin`
+Pin the last bot message in the channel
+*Requires: Moderator*
+
 #### `?purge <count> [reason]`
 Bulk delete messages from the current channel (supports up to 999 messages + command message, with automatic batching)
 *Requires: Moderator*
@@ -145,6 +169,10 @@ Release a user by removing the 'detained' role
 Show what sticky roles a user has configured
 *Requires: Moderator*
 
+#### `?slowmode <delay> [reason]`
+Set channel slowmode delay
+*Requires: Moderator, Admin*
+
 #### `?thotbgone <user> [reason]`
 Detain a user with a thot-be-gone themed message and assign the 'detained' role
 *Requires: Moderator, Admin*
@@ -152,6 +180,10 @@ Detain a user with a thot-be-gone themed message and assign the 'detained' role
 #### `?timeout <duration> <user> [reason]`
 Timeout a user for a specified duration using Discord's built-in timeout feature
 *Requires: Moderator, Admin*
+
+#### `?unban <user> [reason]`
+Unban a user from the server by user ID
+*Requires: Admin*
 
 #### `?unlock [target_channel] [reason]`
 Unlock a text channel by restoring send message permissions for @everyone role
@@ -344,10 +376,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-02 01:10:36 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-02 01:41:42 UTC*
 
 **Bot Statistics:**
-- Commands: 30
+- Commands: 38
 - Triggers: 7
 - Action Flows: 2
-- Event Handlers: 20
+- Event Handlers: 24
