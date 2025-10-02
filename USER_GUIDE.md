@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-01 06:47:25 UTC*
+*Generated automatically on 2025-10-02 01:10:36 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **29 custom commands** for various functions
+- **30 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -166,6 +166,9 @@ Immediately unmute a user by restoring their cached roles and clearing any pendi
 *Requires: Moderator, Admin*
 
 ### Utility Commands
+
+#### `?ocr`
+Extract text from images using OCR (Optical Character Recognition)
 
 #### `?stickyrole <role> <user> [reason]`
 Assign a role to a user that will be automatically re-assigned if they leave and rejoin the server
@@ -341,10 +344,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-01 06:47:25 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-02 01:10:36 UTC*
 
 **Bot Statistics:**
-- Commands: 29
+- Commands: 30
 - Triggers: 7
 - Action Flows: 2
-- Event Handlers: 19
+- Event Handlers: 20

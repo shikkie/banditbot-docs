@@ -1,10 +1,10 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-01 06:47:25 UTC*
+*Generated automatically on 2025-10-02 01:10:36 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 29 commands, 7 triggers, 2 action flows, and 19 event handlers.
+BanditBot features a sophisticated modular command system with 30 commands, 7 triggers, 2 action flows, and 20 event handlers.
 
 ## 🤖 Bot Commands
 
@@ -266,6 +266,19 @@ BanditBot features a sophisticated modular command system with 29 commands, 7 tr
 **Actions:**
 - **make_log**
 - **reply**: `✅ Note added for {user}: {note}`
+
+---
+
+### `?ocr`
+
+**Description:** Extract text from images using OCR (Optical Character Recognition)
+
+**Usage:** `?ocr`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_to_text**
 
 ---
 
@@ -699,6 +712,16 @@ Automatic responses to Discord events:
 
 ---
 
+### on_image
+
+**Description:** Process images with OCR and log extracted text
+
+**Actions:**
+- **ocr_image_url**
+- **conditional_chan_log**
+
+---
+
 ### on_invite_create
 
 **Description:** Log invite creation to the configured log channel
@@ -817,4 +840,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `modular_commands.yml`. Last updated: 2025-10-01 06:47:25 UTC*
+*This documentation is automatically generated from `modular_commands.yml`. Last updated: 2025-10-02 01:10:36 UTC*

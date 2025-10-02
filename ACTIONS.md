@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-01 06:47:25 UTC*
+*Generated automatically on 2025-10-02 01:10:36 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 35 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 38 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -242,8 +242,6 @@ actions:
 
 #### `cache_user_roles`
 
-**Description:** # Initialize variables used in exception handlers cached_roles = None def extract_param_value(param_ref, param_name):
-
 **Function:** `cache_user_roles_action`
 
 **Usage:**
@@ -306,8 +304,6 @@ actions:
 
 #### `remove_user_roles`
 
-**Description:** # Initialize variables used in exception handlers removed_roles = [] def extract_param_value(param_ref, param_name):
-
 **Function:** `remove_user_roles_action`
 
 **Usage:**
@@ -320,8 +316,6 @@ actions:
 ---
 
 #### `restore_cached_roles`
-
-**Description:** # Initialize variables used in exception handlers cached_entry = None restored_count = 0 def extract_param_value(param_ref, param_name):
 
 **Function:** `restore_cached_roles_action`
 
@@ -436,8 +430,6 @@ actions:
 ---
 
 #### `clear_delayed_roles`
-
-**Description:** # Initialize variables used in exception handlers cleared_count = 0 def extract_param_value(param_ref, param_name):
 
 **Function:** `clear_delayed_roles_action`
 
@@ -578,6 +570,19 @@ actions:
 
 ---
 
+#### `ocr_to_text`
+
+**Function:** `ocr_to_text_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ocr_to_text"
+    # Add configuration parameters here
+```
+
+---
+
 #### `react`
 
 **Function:** `react_action`
@@ -637,6 +642,34 @@ actions:
 
 ---
 
+
+### Other Actions
+
+#### `conditional_chan_log`
+
+**Function:** `conditional_chan_log_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "conditional_chan_log"
+    # Add configuration parameters here
+```
+
+---
+
+#### `ocr_image_url`
+
+**Function:** `ocr_image_url_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ocr_image_url"
+    # Add configuration parameters here
+```
+
+---
 
 
 ## 🔧 Action Parameters
@@ -745,4 +778,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-01 06:47:25 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 01:10:36 UTC*
