@@ -10,6 +10,9 @@ Complete guide for end users, including command usage, moderation features, and 
 ### 📋 [Commands Reference](docs/COMMANDS.md)
 Detailed documentation of all available commands, triggers, and action flows.
 
+### 🔥 [Regex Triggers Guide](docs/TRIGGERS.md)
+Comprehensive guide to regex triggers, pattern groups, and match group capture with practical examples.
+
 ### 🌐 [API Documentation](docs/API.md)
 REST API reference for configuration management and data access.
 

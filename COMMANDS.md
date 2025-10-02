@@ -1,6 +1,6 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-02 07:27:54 UTC*
+*Generated automatically on 2025-10-02 07:45:22 UTC*
 
 ## Overview
 
@@ -1114,4 +1114,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-02 07:27:54 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-02 07:45:22 UTC*
