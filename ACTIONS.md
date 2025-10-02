@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-02 08:10:04 UTC*
+*Generated automatically on 2025-10-02 23:41:59 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 54 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 57 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -671,6 +671,19 @@ actions:
 
 ---
 
+#### `get_user_nickname`
+
+**Function:** `get_user_nickname_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "get_user_nickname"
+    # Add configuration parameters here
+```
+
+---
+
 #### `list_triggers`
 
 **Description:** List all configured regex triggers and their actions.
@@ -773,6 +786,19 @@ actions:
 
 ---
 
+#### `strip_emoji`
+
+**Function:** `strip_emoji_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "strip_emoji"
+    # Add configuration parameters here
+```
+
+---
+
 #### `test_regex`
 
 **Description:** Test a regex pattern against a test string using the same pipeline as triggers.
@@ -803,6 +829,19 @@ actions:
 ```yaml
 actions:
   - type: "text_replace"
+    # Add configuration parameters here
+```
+
+---
+
+#### `url_encode`
+
+**Function:** `url_encode_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "url_encode"
     # Add configuration parameters here
 ```
 
@@ -1064,4 +1103,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 08:10:04 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-02 23:41:59 UTC*

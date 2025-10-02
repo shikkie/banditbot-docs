@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-02 08:10:04 UTC*
+*Generated automatically on 2025-10-02 23:41:59 UTC*
 
 ## Overview
 
@@ -287,7 +287,6 @@ The following collections are used by BanditBot:
 
 **Fields:**
 
-- **_id** (*string*): MongoDB ObjectId as string
 - **user** (*long*): Discord user ID as 64-bit integer
 - **role** (*long*): Discord role ID as 64-bit integer
 - **guild** (*long*): Discord guild ID as 64-bit integer
@@ -300,7 +299,6 @@ The following collections are used by BanditBot:
 
 **Fields:**
 
-- **_id** (*string*): MongoDB ObjectId as string
 - **guild** (*long*): Discord guild ID as 64-bit integer
 - **moderator** (*long*): Discord moderator user ID as 64-bit integer
 - **user** (*long*): Discord user ID that the action was performed on
@@ -316,7 +314,6 @@ The following collections are used by BanditBot:
 
 **Fields:**
 
-- **_id** (*string*): MongoDB ObjectId as string
 - **guild** (*long*): Discord guild ID as 64-bit integer
 - **executeAt** (*date*): BSON date of when to execute the action chain
 - **actionChain** (*array*): Array of actions to execute when delay expires
@@ -334,13 +331,12 @@ The following collections are used by BanditBot:
 
 **Fields:**
 
-- **_id** (*string*): MongoDB ObjectId as string
 - **cache_id** (*string*): Unique identifier for this role cache
-- **user_id** (*string*): Discord user ID as string
-- **guild_id** (*string*): Discord guild ID as string
+- **user_id** (*long*): Discord user ID as 64-bit integer
+- **guild_id** (*long*): Discord guild ID as 64-bit integer
 - **cached_roles** (*array*): Array of cached role data
 - **cached_at** (*date*): BSON date of when roles were cached
-- **created_by** (*string*): Discord user ID who created this cache
+- **created_by** (*long*): Discord user ID who created this cache as 64-bit integer
 - **reason** (*string*): Reason for caching (usually command name)
 
 **Required Fields:** cache_id, user_id, guild_id, cached_roles, cached_at
@@ -431,4 +427,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 08:10:04 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 23:41:59 UTC*

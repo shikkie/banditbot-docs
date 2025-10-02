@@ -1,10 +1,10 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-02 08:10:04 UTC*
+*Generated automatically on 2025-10-02 23:41:59 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 45 commands, 7 triggers, 2 action flows, and 24 event handlers.
+BanditBot features a sophisticated modular command system with 48 commands, 7 triggers, 3 action flows, and 24 event handlers.
 
 ## 🤖 Bot Commands
 
@@ -41,8 +41,7 @@ BanditBot features a sophisticated modular command system with 45 commands, 7 tr
 **Required Roles:** Moderator, Admin
 
 **Actions:**
-- **stickyrole_add**: Apply role `detained`
-- **delete_message**
+- **action_flow**
 - **message**: `{user.mention} just found out.`
 - **message**: `{$images:arrest}`
 
@@ -109,8 +108,7 @@ BanditBot features a sophisticated modular command system with 45 commands, 7 tr
 **Required Roles:** Moderator, Admin
 
 **Actions:**
-- **stickyrole_add**: Apply role `detained`
-- **delete_message**
+- **action_flow**
 - **message**: `{user.mention} has been defenestrated. `
 - **message**: `{$images:defenestrate}`
 
@@ -213,6 +211,28 @@ BanditBot features a sophisticated modular command system with 45 commands, 7 tr
 
 ---
 
+### `?grippysock`
+
+**Description:** Generate a Cinderella Grippy Sock meme URL with user and author nicknames
+
+**Usage:** `?grippysock <user>`
+
+**Parameters:**
+- **user** (required) - *user* - Target user for the meme
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **get_user_nickname**
+- **get_user_nickname**
+- **strip_emoji**
+- **strip_emoji**
+- **url_encode**
+- **url_encode**
+- **message**: `https://api.frenpost.xyz/meme/Cinderella%20Grippy%...`
+
+---
+
 ### `?gtfo`
 
 **Description:** Eject a user by assigning the 'detained' role with an ejection message
@@ -226,8 +246,7 @@ BanditBot features a sophisticated modular command system with 45 commands, 7 tr
 **Required Roles:** Moderator, Admin
 
 **Actions:**
-- **stickyrole_add**: Apply role `detained`
-- **delete_message**
+- **action_flow**
 - **message**: `{user.mention} has been ejected`
 - **message**: `{$images:arrest}`
 
@@ -611,6 +630,44 @@ Result: {result}`
 
 ---
 
+### `?test_urlencode`
+
+**Description:** Test URL encoding functionality with custom string format
+
+**Usage:** `?test_urlencode <teststring>`
+
+**Parameters:**
+- **teststring** (required) - *string* - Collects all remaining arguments - String to URL encode
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **url_encode**
+- **reply**: `URL Encoded string: {urlencode}`
+
+---
+
+### `?test_user_nick`
+
+**Description:** Test user nickname extraction functionality
+
+**Usage:** `?test_user_nick <user>`
+
+**Parameters:**
+- **user** (required) - *user* - User to get nickname for
+
+**Required Roles:** Moderator
+
+**Actions:**
+- **get_user_nickname**
+- **get_user_nickname**
+- **reply**: `author: {author_nick} user: {user_nick}`
+- **url_encode**
+- **url_encode**
+- **reply**: `URL encoded - author: {author_nick_encoded} user: ...`
+
+---
+
 ### `?thotbgone`
 
 **Description:** Detain a user with a thot-be-gone themed message and assign the 'detained' role
@@ -624,8 +681,7 @@ Result: {result}`
 **Required Roles:** Moderator, Admin
 
 **Actions:**
-- **stickyrole_add**: Apply role `detained`
-- **delete_message**
+- **action_flow**
 - **message**: `{user.mention} has been invited for a ride in the ...`
 - **message**: `{$images:thotbgone}`
 
@@ -854,6 +910,17 @@ These triggers automatically respond to message patterns:
 ## 🔄 Action Flows
 
 Reusable action sequences:
+
+### arrest
+
+**Description:** Core arrest action flow - removes all roles except detained, adds detained sticky role, and cleans up command
+
+**Actions:**
+- **remove_user_roles**
+- **stickyrole_add**: Apply role `detained`
+- **delete_message**
+
+---
 
 ### ram
 
@@ -1114,4 +1181,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-02 08:10:04 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-02 23:41:59 UTC*

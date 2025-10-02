@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-02 08:10:04 UTC*
+*Generated automatically on 2025-10-02 23:42:00 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **45 custom commands** for various functions
+- **48 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -197,6 +197,14 @@ Set channel slowmode delay
 Test the text_replace action with a simple example
 *Requires: Moderator*
 
+#### `?test_urlencode <teststring>`
+Test URL encoding functionality with custom string format
+*Requires: Moderator*
+
+#### `?test_user_nick <user>`
+Test user nickname extraction functionality
+*Requires: Moderator*
+
 #### `?thotbgone <user> [reason]`
 Detain a user with a thot-be-gone themed message and assign the 'detained' role
 *Requires: Moderator, Admin*
@@ -245,6 +253,9 @@ Post a random cute raccoon image with accompanying text
 
 #### `?dn`
 A fun 'deez nuts' meme response command
+
+#### `?grippysock <user>`
+Generate a Cinderella Grippy Sock meme URL with user and author nicknames
 
 #### `?joke`
 Tell a random dad joke from the bot's collection
@@ -405,10 +416,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-02 08:10:04 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-02 23:42:00 UTC*
 
 **Bot Statistics:**
-- Commands: 45
+- Commands: 48
 - Triggers: 7
-- Action Flows: 2
+- Action Flows: 3
 - Event Handlers: 24
