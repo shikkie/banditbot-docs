@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-02 06:43:48 UTC*
+*Generated automatically on 2025-10-02 07:03:54 UTC*
 
 ## 📖 Table of Contents
 
@@ -405,7 +405,7 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-02 06:43:48 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-02 07:03:54 UTC*
 
 **Bot Statistics:**
 - Commands: 45

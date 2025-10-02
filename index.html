@@ -368,7 +368,7 @@
             }
         }
 
-        async function navigateToDoc(docKey) {
+        async function navigateToDoc(docKey, anchor) {
             // Update active nav item
             document.querySelectorAll('.nav-item').forEach(item => {
                 item.classList.remove('active');
@@ -412,6 +412,14 @@
                             window.Prism.highlightAll();
                         }
                     }, 100);
+                    
+                    // Set up click handlers for anchor links in the content
+                    setupAnchorLinks();
+                    
+                    // If an anchor was specified, scroll to it after content loads
+                    if (anchor) {
+                        setTimeout(() => scrollToAnchor(anchor), 200);
+                    }
                 }
             } else {
                 // Home page
@@ -447,13 +455,85 @@
                 `);
             }
         }
+        
+        // Set up click handlers for anchor links within content
+        function setupAnchorLinks() {
+            const contentContainer = document.getElementById('content-container');
+            if (!contentContainer) return;
+            
+            // Find all anchor links within the content
+            const anchorLinks = contentContainer.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    const anchorId = href.slice(1);
+                    
+                    // Don't prevent default - let the browser update the hash
+                    // but scroll immediately
+                    setTimeout(() => scrollToAnchor(anchorId), 10);
+                });
+            });
+        }
 
         // Handle hash changes
         function handleHashChange() {
             const hash = window.location.hash.slice(1);
-            const docKey = hash && DOCS[hash] ? hash : 'home';
-            if (docKey !== currentDoc) {
-                navigateToDoc(docKey);
+            
+            // Check if this is a document navigation hash or an in-page anchor
+            if (hash && DOCS[hash]) {
+                // This is a valid document key - navigate to that document
+                if (hash !== currentDoc) {
+                    navigateToDoc(hash);
+                }
+            } else if (hash && hash.startsWith('-')) {
+                // This looks like an in-page anchor (e.g., #-getting-started)
+                // Find and scroll to the element
+                scrollToAnchor(hash);
+            } else if (!hash) {
+                // Empty hash - navigate to home
+                if (currentDoc !== 'home') {
+                    navigateToDoc('home');
+                }
+            } else {
+                // Unknown hash - try to find it as an anchor in the current page
+                scrollToAnchor(hash);
+            }
+        }
+        
+        // Scroll to an anchor element on the page
+        function scrollToAnchor(anchorId) {
+            // Try multiple strategies to find the element
+            const strategies = [
+                () => document.getElementById(anchorId),
+                () => document.getElementById(anchorId.toLowerCase()),
+                () => document.querySelector(`[id="${anchorId}"]`),
+                () => document.querySelector(`[id="${anchorId.toLowerCase()}"]`),
+                // Try finding by header text matching
+                () => {
+                    const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
+                    const targetText = anchorId.replace(/^-+/, '').replace(/-/g, ' ');
+                    for (const heading of headings) {
+                        const headingText = heading.textContent.replace(/^[^a-zA-Z0-9]+/, '').toLowerCase();
+                        if (headingText === targetText.toLowerCase()) {
+                            return heading;
+                        }
+                    }
+                    return null;
+                }
+            ];
+            
+            let element = null;
+            for (const strategy of strategies) {
+                element = strategy();
+                if (element) break;
+            }
+            
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Add a small offset for better visibility
+                setTimeout(() => {
+                    window.scrollBy(0, -20);
+                }, 100);
             }
         }
 
