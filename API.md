@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-02 23:41:59 UTC*
+*Generated automatically on 2025-10-02 23:42:51 UTC*
 
 ## Overview
 
@@ -427,4 +427,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 23:41:59 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-02 23:42:51 UTC*

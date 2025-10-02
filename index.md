@@ -4,22 +4,25 @@ Welcome to the comprehensive documentation for BanditBot - a sophisticated Disco
 
 ## 📚 Documentation Sections
 
-### 🎯 [User Guide](docs/USER_GUIDE.md)
+### 📄 [Software Requirements](REQUIREMENTS.md)
+System requirements specification with functional and non-functional requirements.
+
+### 🎯 [User Guide](USER_GUIDE.md)
 Complete guide for end users, including command usage, moderation features, and troubleshooting.
 
-### 📋 [Commands Reference](docs/COMMANDS.md)
+### 📋 [Commands Reference](COMMANDS.md)
 Detailed documentation of all available commands, triggers, and action flows.
 
-### 🔥 [Regex Triggers Guide](docs/TRIGGERS.md)
+### 🔥 [Regex Triggers Guide](TRIGGERS.md)
 Comprehensive guide to regex triggers, pattern groups, and match group capture with practical examples.
 
-### 🌐 [API Documentation](docs/API.md)
+### 🌐 [API Documentation](API.md)
 REST API reference for configuration management and data access.
 
-### 🎬 [Action System](docs/ACTIONS.md)
+### 🎬 [Action System](ACTIONS.md)
 Technical documentation for the action system and creating custom actions.
 
-### 🐳 [Docker Deployment](DOCKER_DEPLOYMENT.md)
+### 🐳 [Docker Deployment](../DOCKER_DEPLOYMENT.md)
 Production deployment guide using Docker and Docker Compose.
 
 ## 🚀 Quick Start
@@ -35,9 +38,10 @@ Production deployment guide using Docker and Docker Compose.
 3. Read the [User Guide](docs/USER_GUIDE.md) for feature explanations
 
 ### For Developers
-1. Review the [Action System](docs/ACTIONS.md) documentation
-2. Check the [API Documentation](docs/API.md) for integration
-3. Use the [Commands Reference](docs/COMMANDS.md) for configuration examples
+1. Review the [Software Requirements](REQUIREMENTS.md) for system specifications
+2. Study the [Action System](ACTIONS.md) documentation
+3. Check the [API Documentation](API.md) for integration
+4. Use the [Commands Reference](COMMANDS.md) for configuration examples
 
 ## 🔧 Features
 
