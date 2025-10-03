@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-03 00:12:13 UTC*
+*Generated automatically on 2025-10-03 03:32:31 UTC*
 
 ## Overview
 
@@ -279,6 +279,72 @@ curl -X POST http://localhost:5000/api/regex-test \\
 
 ---
 
+#### `GET /api/discord/guilds`
+
+**Description:** Get list of guilds the bot is in.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/guilds
+```
+
+---
+
+#### `GET /api/discord/guilds/<guild_id>/members`
+
+**Description:** Get members from a specific guild with optional search.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/guilds/<guild_id>/members
+```
+
+---
+
+#### `GET /api/discord/guilds/<guild_id>/roles`
+
+**Description:** Get roles from a specific guild.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/guilds/<guild_id>/roles
+```
+
+---
+
+#### `GET /api/discord/guilds/<guild_id>/channels`
+
+**Description:** Get channels from a specific guild.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/guilds/<guild_id>/channels
+```
+
+---
+
+#### `GET /api/discord/users/<user_id>`
+
+**Description:** Get information about a specific user.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/users/<user_id>
+```
+
+---
+
+#### `GET /api/discord/guilds/<guild_id>/members/<user_id>`
+
+**Description:** Get information about a specific member in a guild.
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/discord/guilds/<guild_id>/members/<user_id>
+```
+
+---
+
 ## 📊 Database Schema
 
 The following collections are used by BanditBot:
@@ -427,4 +493,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-03 00:12:13 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-03 03:32:31 UTC*

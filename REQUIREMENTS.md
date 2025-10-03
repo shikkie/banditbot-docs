@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-03 00:12:14 UTC
+**Generated:** 2025-10-03 03:32:32 UTC
 
 **Version:** Inferred from codebase analysis
 
@@ -156,7 +156,7 @@ The system SHALL support the following action types:
 
 ## API Requirements
 
-### FR-API: RESTful API (26 endpoints)
+### FR-API: RESTful API (32 endpoints)
 
 #### FR-API-001: HTTP API Server
 The system SHALL provide a Flask-based REST API with:
@@ -193,6 +193,12 @@ The system SHALL provide a Flask-based REST API with:
 - `GET /api/schema`: Get the MongoDB schema definitions.
 - `POST /api/reload`: Trigger bot configuration reload.
 - `POST /api/regex-test`: Test regex patterns against test strings.
+- `GET /api/discord/guilds`: Get list of guilds the bot is in.
+- `GET /api/discord/guilds/<guild_id>/members`: Get members from a specific guild with optional search.
+- `GET /api/discord/guilds/<guild_id>/roles`: Get roles from a specific guild.
+- `GET /api/discord/guilds/<guild_id>/channels`: Get channels from a specific guild.
+- `GET /api/discord/users/<user_id>`: Get information about a specific user.
+- `GET /api/discord/guilds/<guild_id>/members/<user_id>`: Get information about a specific member in a guild.
 
 ## Data Management Requirements
 
@@ -326,7 +332,7 @@ The system SHALL support containerized deployment via:
 | Regex Triggers | 7 |
 | Event Handlers | 24 |
 | Action Types | 57 |
-| API Endpoints | 26 |
+| API Endpoints | 32 |
 | Database Collections | 4 |
 
 ---
