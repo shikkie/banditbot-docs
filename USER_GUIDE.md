@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-03 03:32:31 UTC*
+*Generated automatically on 2025-10-03 22:12:24 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **48 custom commands** for various functions
+- **62 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -81,6 +81,10 @@ Commands follow this basic structure:
 
 ### Moderation Commands
 
+#### `?add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
+Add a social media monitor to track RSS feeds, YouTube channels, or Twitter accounts
+*Requires: Admin, Moderator*
+
 #### `?add_trigger <name> <pattern> <actions>`
 Add a new regex trigger with specified actions
 *Requires: Moderator*
@@ -137,6 +141,10 @@ List all configured action flows
 List all available pattern groups
 *Requires: Moderator*
 
+#### `?list_social_monitors`
+List all configured social media monitors for this server
+*Requires: Admin, Moderator*
+
 #### `?list_triggers`
 List all configured regex triggers and their actions
 *Requires: Moderator*
@@ -172,6 +180,10 @@ Bulk delete messages from the current channel (supports up to 999 messages + com
 #### `?release <user> [reason]`
 Release a user by removing the 'detained' role
 *Requires: Moderator*
+
+#### `?remove_social_monitor <monitor_id>`
+Remove a social media monitor
+*Requires: Admin, Moderator*
 
 #### `?show_action_flow <flow_name>`
 Show the detailed configuration of a specific action flow
@@ -213,6 +225,10 @@ Detain a user with a thot-be-gone themed message and assign the 'detained' role
 Timeout a user for a specified duration using Discord's built-in timeout feature
 *Requires: Moderator, Admin*
 
+#### `?toggle_social_monitor <monitor_id> [enabled]`
+Enable or disable a social media monitor
+*Requires: Admin, Moderator*
+
 #### `?unban <user> [reason]`
 Unban a user from the server by user ID
 *Requires: Admin*
@@ -231,8 +247,26 @@ Immediately unmute a user by restoring their cached roles and clearing any pendi
 
 ### Utility Commands
 
+#### `?analyze_document`
+Extract and analyze document text using AI
+
+#### `?analyze_receipt`
+Extract and analyze receipt details with high accuracy
+
 #### `?ocr`
 Extract text from images using OCR (Optical Character Recognition)
+
+#### `?ocr_google`
+Extract text from images using Google Cloud Vision (requires API key)
+
+#### `?ocr_grok`
+Extract text from images using Grok Vision (requires API key)
+
+#### `?ocr_openai`
+Extract text from images using OpenAI Vision (requires API key)
+
+#### `?roll <n> <d>`
+Roll n number of d-sided dice and display results with sum
 
 #### `?stickyrole <role> <user> [reason]`
 Assign a role to a user that will be automatically re-assigned if they leave and rejoin the server
@@ -242,6 +276,18 @@ Remove a sticky role from a user and delete it from the database
 
 #### `?touch`
 A simple test command to verify the bot is responding
+
+#### `?transcribe`
+Transcribe voice/audio messages to text using speech recognition
+
+#### `?tts <msg>`
+Convert text to speech and reply with a voice message
+
+#### `?tts_british <msg>`
+Convert text to speech with British English accent
+
+#### `?tts_slow <msg>`
+Convert text to speech with slow, clear pronunciation
 
 #### `?whois <user>`
 Display detailed information about a user including roles, join date, account age, and permissions
@@ -416,10 +462,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-03 03:32:31 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-03 22:12:24 UTC*
 
 **Bot Statistics:**
-- Commands: 48
+- Commands: 62
 - Triggers: 7
 - Action Flows: 3
-- Event Handlers: 24
+- Event Handlers: 26

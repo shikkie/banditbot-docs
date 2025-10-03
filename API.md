@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-03 03:32:31 UTC*
+*Generated automatically on 2025-10-03 22:12:24 UTC*
 
 ## Overview
 
@@ -255,7 +255,7 @@ curl -X GET http://localhost:5000/api/rolecaches/<doc_id>
 
 #### `POST /api/reload`
 
-**Description:** Trigger bot configuration reload.
+**Description:** Trigger bot configuration reload via signal file.
 
 **Example:**
 ```bash
@@ -409,6 +409,27 @@ The following collections are used by BanditBot:
 
 ---
 
+### socialMediaMonitors
+
+**Fields:**
+
+- **monitor_id** (*string*): Unique identifier for this monitor (e.g., 'rss_blog', 'youtube_channel123')
+- **monitor_type** (*string*): Type of social media monitor
+- **guild** (*long*): Discord guild ID as 64-bit integer
+- **channel** (*long*): Discord channel ID where posts should be sent as 64-bit integer
+- **source_url** (*string*): Source URL (RSS feed URL, YouTube channel ID, Twitter handle)
+- **last_check** (*date*): BSON date of last check
+- **last_post_id** (*string*): ID of the last post that was processed
+- **last_post_date** (*date*): BSON date of last post that was processed
+- **enabled** (*boolean*): Whether this monitor is currently active
+- **created_at** (*date*): BSON date when monitor was created
+- **created_by** (*long*): Discord user ID who created this monitor as 64-bit integer
+- **action_chain** (*array*): Array of actions to execute when new post is found
+
+**Required Fields:** monitor_id, monitor_type, guild, channel, source_url, enabled, created_at
+
+---
+
 ## 🔐 Authentication
 
 Currently, the API does not require authentication for local development. In production, consider implementing:
@@ -493,4 +514,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-03 03:32:31 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-03 22:12:24 UTC*

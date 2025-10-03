@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-03 03:32:31 UTC*
+*Generated automatically on 2025-10-03 22:12:24 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 57 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 69 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -574,6 +574,28 @@ actions:
 
 ---
 
+#### `add_social_monitor`
+
+**Description:** Add a new social media monitor.
+
+**Configuration:**
+- monitor_id: Unique identifier for this monitor (parameter reference)
+- monitor_type: Type of monitor - 'rss', 'youtube', or 'twitter' (parameter reference)
+- source_url: Source URL or identifier (parameter reference)
+- channel: Channel where posts should be sent (parameter reference)
+- actions: Optional array of actions to execute for each new post
+
+**Function:** `add_social_monitor_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "add_social_monitor"
+    # Add configuration parameters here
+```
+
+---
+
 #### `add_trigger`
 
 **Function:** `add_trigger_action`
@@ -582,6 +604,19 @@ actions:
 ```yaml
 actions:
   - type: "add_trigger"
+    # Add configuration parameters here
+```
+
+---
+
+#### `check_reaction_threshold`
+
+**Function:** `check_reaction_threshold_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "check_reaction_threshold"
     # Add configuration parameters here
 ```
 
@@ -684,6 +719,24 @@ actions:
 
 ---
 
+#### `list_social_monitors`
+
+**Description:** List all social media monitors for the current guild.
+
+**Configuration:**
+- (no parameters required)
+
+**Function:** `list_social_monitors_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "list_social_monitors"
+    # Add configuration parameters here
+```
+
+---
+
 #### `list_triggers`
 
 **Description:** List all configured regex triggers and their actions.
@@ -741,6 +794,45 @@ actions:
 
 ---
 
+#### `ocr_google_vision`
+
+**Function:** `ocr_google_vision_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ocr_google_vision"
+    # Add configuration parameters here
+```
+
+---
+
+#### `ocr_grok`
+
+**Function:** `ocr_grok_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ocr_grok"
+    # Add configuration parameters here
+```
+
+---
+
+#### `ocr_openai`
+
+**Function:** `ocr_openai_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "ocr_openai"
+    # Add configuration parameters here
+```
+
+---
+
 #### `ocr_to_text`
 
 **Function:** `ocr_to_text_action`
@@ -767,6 +859,37 @@ actions:
 
 ---
 
+#### `remove_social_monitor`
+
+**Description:** Remove a social media monitor.
+
+**Configuration:**
+- monitor_id: ID of the monitor to remove (parameter reference)
+
+**Function:** `remove_social_monitor_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "remove_social_monitor"
+    # Add configuration parameters here
+```
+
+---
+
+#### `roll_dice`
+
+**Function:** `roll_dice_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "roll_dice"
+    # Add configuration parameters here
+```
+
+---
+
 #### `show_pending_delays`
 
 **Description:** Show all pending delayed actions in the database.
@@ -781,6 +904,19 @@ actions:
 ```yaml
 actions:
   - type: "show_pending_delays"
+    # Add configuration parameters here
+```
+
+---
+
+#### `speech_to_text`
+
+**Function:** `speech_to_text_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "speech_to_text"
     # Add configuration parameters here
 ```
 
@@ -834,6 +970,38 @@ actions:
 
 ---
 
+#### `text_to_speech`
+
+**Function:** `text_to_speech_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "text_to_speech"
+    # Add configuration parameters here
+```
+
+---
+
+#### `toggle_social_monitor`
+
+**Description:** Enable or disable a social media monitor.
+
+**Configuration:**
+- monitor_id: ID of the monitor to toggle (parameter reference)
+- enabled: Optional boolean to set state explicitly (parameter reference)
+
+**Function:** `toggle_social_monitor_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "toggle_social_monitor"
+    # Add configuration parameters here
+```
+
+---
+
 #### `url_encode`
 
 **Function:** `url_encode_action`
@@ -842,6 +1010,19 @@ actions:
 ```yaml
 actions:
   - type: "url_encode"
+    # Add configuration parameters here
+```
+
+---
+
+#### `voice_channel_transcribe`
+
+**Function:** `voice_channel_transcribe_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "voice_channel_transcribe"
     # Add configuration parameters here
 ```
 
@@ -1103,4 +1284,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 03:32:31 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 22:12:24 UTC*

@@ -1,14 +1,33 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-03 03:32:31 UTC*
+*Generated automatically on 2025-10-03 22:12:24 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 48 commands, 7 triggers, 3 action flows, and 24 event handlers.
+BanditBot features a sophisticated modular command system with 62 commands, 7 triggers, 3 action flows, and 26 event handlers.
 
 ## 🤖 Bot Commands
 
 ### Command Reference
+
+### `?add_social_monitor`
+
+**Description:** Add a social media monitor to track RSS feeds, YouTube channels, or Twitter accounts
+
+**Usage:** `?add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
+
+**Parameters:**
+- **monitor_id** (required) - *string* - Unique identifier for this monitor (e.g., 'python_blog', 'discord_youtube')
+- **monitor_type** (required) - *string* - Type of monitor - 'rss', 'youtube', or 'twitter'
+- **source_url** (required) - *string* - Source URL (RSS feed URL, YouTube channel ID, or Twitter username without @)
+- **channel** (required) - *channel* - Channel where new posts should be sent
+
+**Required Roles:** Admin, Moderator
+
+**Actions:**
+- **add_social_monitor**: Target `{channel}`
+
+---
 
 ### `?add_trigger`
 
@@ -25,6 +44,32 @@ BanditBot features a sophisticated modular command system with 48 commands, 7 tr
 
 **Actions:**
 - **add_trigger**
+
+---
+
+### `?analyze_document`
+
+**Description:** Extract and analyze document text using AI
+
+**Usage:** `?analyze_document`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_openai**
+
+---
+
+### `?analyze_receipt`
+
+**Description:** Extract and analyze receipt details with high accuracy
+
+**Usage:** `?analyze_receipt`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_google_vision**
 
 ---
 
@@ -310,6 +355,19 @@ BanditBot features a sophisticated modular command system with 48 commands, 7 tr
 
 ---
 
+### `?list_social_monitors`
+
+**Description:** List all configured social media monitors for this server
+
+**Usage:** `?list_social_monitors`
+
+**Required Roles:** Admin, Moderator
+
+**Actions:**
+- **list_social_monitors**
+
+---
+
 ### `?list_triggers`
 
 **Description:** List all configured regex triggers and their actions
@@ -410,6 +468,45 @@ BanditBot features a sophisticated modular command system with 48 commands, 7 tr
 
 ---
 
+### `?ocr_google`
+
+**Description:** Extract text from images using Google Cloud Vision (requires API key)
+
+**Usage:** `?ocr_google`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_google_vision**
+
+---
+
+### `?ocr_grok`
+
+**Description:** Extract text from images using Grok Vision (requires API key)
+
+**Usage:** `?ocr_grok`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_grok**
+
+---
+
+### `?ocr_openai`
+
+**Description:** Extract text from images using OpenAI Vision (requires API key)
+
+**Usage:** `?ocr_openai`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **ocr_openai**
+
+---
+
 ### `?pending_delays`
 
 **Description:** Show pending delay queue actions
@@ -468,6 +565,39 @@ BanditBot features a sophisticated modular command system with 48 commands, 7 tr
 **Actions:**
 - **stickyrole_rem**: Apply role `detained`
 - **reply**: `✅ {user.mention} has been released from detention....`
+
+---
+
+### `?remove_social_monitor`
+
+**Description:** Remove a social media monitor
+
+**Usage:** `?remove_social_monitor <monitor_id>`
+
+**Parameters:**
+- **monitor_id** (required) - *string* - ID of the monitor to remove
+
+**Required Roles:** Admin, Moderator
+
+**Actions:**
+- **remove_social_monitor**
+
+---
+
+### `?roll`
+
+**Description:** Roll n number of d-sided dice and display results with sum
+
+**Usage:** `?roll <n> <d>`
+
+**Parameters:**
+- **n** (required) - *integer* - Number of dice to roll (1-100)
+- **d** (required) - *integer* - Number of sides per die (2-1000)
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **roll_dice**
 
 ---
 
@@ -707,6 +837,23 @@ Result: {result}`
 
 ---
 
+### `?toggle_social_monitor`
+
+**Description:** Enable or disable a social media monitor
+
+**Usage:** `?toggle_social_monitor <monitor_id> [enabled]`
+
+**Parameters:**
+- **monitor_id** (required) - *string* - ID of the monitor to toggle
+- **enabled** (optional) - *string* - Set to "true" or "false" to explicitly enable/disable (leave empty to toggle)
+
+**Required Roles:** Admin, Moderator
+
+**Actions:**
+- **toggle_social_monitor**
+
+---
+
 ### `?touch`
 
 **Description:** A simple test command to verify the bot is responding
@@ -717,6 +864,67 @@ Result: {result}`
 
 **Actions:**
 - **reply**: `👋 Touch command received! Hello, {author}!`
+
+---
+
+### `?transcribe`
+
+**Description:** Transcribe voice/audio messages to text using speech recognition
+
+**Usage:** `?transcribe`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **speech_to_text**
+
+---
+
+### `?tts`
+
+**Description:** Convert text to speech and reply with a voice message
+
+**Usage:** `?tts <msg>`
+
+**Parameters:**
+- **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **text_to_speech**
+
+---
+
+### `?tts_british`
+
+**Description:** Convert text to speech with British English accent
+
+**Usage:** `?tts_british <msg>`
+
+**Parameters:**
+- **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **text_to_speech**
+
+---
+
+### `?tts_slow`
+
+**Description:** Convert text to speech with slow, clear pronunciation
+
+**Usage:** `?tts_slow <msg>`
+
+**Parameters:**
+- **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **text_to_speech**
 
 ---
 
@@ -1119,6 +1327,15 @@ Automatic responses to Discord events:
 
 ---
 
+### on_raw_reaction_add
+
+**Description:** Handle reaction-based moderation - delete posts when enough moderators react with 😠
+
+**Actions:**
+- **check_reaction_threshold**: Apply role `Moderator`
+
+---
+
 ### on_ready
 
 **Description:** Log when the bot comes online
@@ -1155,6 +1372,15 @@ Automatic responses to Discord events:
 
 ---
 
+### on_voice_message
+
+**Description:** Process voice messages with speech-to-text transcription
+
+**Actions:**
+- **speech_to_text**
+
+---
+
 ### on_voice_state_update
 
 **Description:** Log voice channel activity to the configured log channel
@@ -1181,4 +1407,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-03 03:32:31 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-03 22:12:24 UTC*

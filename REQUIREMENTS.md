@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-03 03:32:32 UTC
+**Generated:** 2025-10-03 22:12:25 UTC
 
 **Version:** Inferred from codebase analysis
 
@@ -46,7 +46,7 @@ The system SHALL use YAML configuration files to define:
 
 ## Functional Requirements
 
-### FR-CMD: Command System (48 commands)
+### FR-CMD: Command System (62 commands)
 
 #### FR-CMD-001: Modular Command Processing
 The system SHALL process commands defined in YAML configuration with:
@@ -62,7 +62,7 @@ The system SHALL support the following command categories:
 
 - **Moderation Commands** (7): `arrest`, `ban`, `kick`, `mute`, `timeout`
 - **Role Management** (6): `createrole`, `deleterole`, `force_sticky`, `show_sticky`, `stickyrole`
-- **Utility Commands** (35): `add_trigger`, `coon`, `defenestrate`, `del_trigger`, `delay_msg`
+- **Utility Commands** (49): `add_social_monitor`, `add_trigger`, `analyze_document`, `analyze_receipt`, `coon`
 
 ### FR-TRG: Regex Trigger System (7 triggers)
 
@@ -86,7 +86,7 @@ Active triggers include:
 - **twitter_rewriter**: Rewrites Twitter/X links to vxtwitter.com for better viewing
 - **zoomer_slang**: Detects zoomer slang from unverified users using pattern group
 
-### FR-EVT: Event Handling (24 event handlers)
+### FR-EVT: Event Handling (26 event handlers)
 
 #### FR-EVT-001: Discord Event Processing
 The system SHALL handle Discord events with configurable actions:
@@ -106,9 +106,9 @@ The system SHALL handle Discord events with configurable actions:
 - **on_member_ban**: Log member bans to the configured log channel
 - **on_member_join**: Handle new members joining the server
 - **on_member_remove**: Log members leaving the server
-- *(and 9 more)*
+- *(and 11 more)*
 
-### FR-ACT: Action System (57 actions)
+### FR-ACT: Action System (69 actions)
 
 #### FR-ACT-001: Action Registry
 The system SHALL provide a registry-based action system with decorated handlers.
@@ -142,17 +142,17 @@ The system SHALL support the following action types:
 - `action_flow`: Action handler: action_flow_action
 
 **Other Actions**:
+- `add_social_monitor`: Action handler: add_social_monitor_action
 - `add_trigger`: Action handler: add_trigger_action
 - `ban`: Action handler: ban_action
 - `chan_log`: Action handler: chan_log_action
+- `check_reaction_threshold`: Action handler: check_reaction_threshold_action
 - `clear_delayed_roles`: Action handler: clear_delayed_roles_action
 - `commands_by_role`: Action handler: commands_by_role_action
 - `conditional_chan_log`: Action handler: conditional_chan_log_action
 - `create_role`: Action handler: create_role_action
 - `del_trigger`: Action handler: del_trigger_action
-- `delay_queue`: Action handler: delay_queue_action
-- `delete_role`: Action handler: delete_role_action
-- *(and 31 more)*
+- *(and 43 more)*
 
 ## API Requirements
 
@@ -191,7 +191,7 @@ The system SHALL provide a Flask-based REST API with:
 **Utility Endpoints**:
 - `GET /api/health`: Health check endpoint.
 - `GET /api/schema`: Get the MongoDB schema definitions.
-- `POST /api/reload`: Trigger bot configuration reload.
+- `POST /api/reload`: Trigger bot configuration reload via signal file.
 - `POST /api/regex-test`: Test regex patterns against test strings.
 - `GET /api/discord/guilds`: Get list of guilds the bot is in.
 - `GET /api/discord/guilds/<guild_id>/members`: Get members from a specific guild with optional search.
@@ -202,7 +202,7 @@ The system SHALL provide a Flask-based REST API with:
 
 ## Data Management Requirements
 
-### FR-DB: Database Schema (4 collections)
+### FR-DB: Database Schema (5 collections)
 
 #### FR-DB-001: MongoDB Storage
 The system SHALL use MongoDB for persistent storage with:
@@ -262,6 +262,23 @@ Fields:
 - `reason` (string): Reason for caching (usually command name)
 
 Required fields: `cache_id`, `user_id`, `guild_id`, `cached_roles`, `cached_at`
+
+**socialMediaMonitors**
+
+Fields:
+- `monitor_id` (string): Unique identifier for this monitor (e.g., 'rss_blog', 'youtube_channel123')
+- `monitor_type` (string): Type of social media monitor
+- `guild` (long): Discord guild ID as 64-bit integer
+- `channel` (long): Discord channel ID where posts should be sent as 64-bit integer
+- `source_url` (string): Source URL (RSS feed URL, YouTube channel ID, Twitter handle)
+- `last_check` (date): BSON date of last check
+- `last_post_id` (string): ID of the last post that was processed
+- `last_post_date` (date): BSON date of last post that was processed
+- `enabled` (boolean): Whether this monitor is currently active
+- `created_at` (date): BSON date when monitor was created
+- *(and 2 more fields)*
+
+Required fields: `monitor_id`, `monitor_type`, `guild`, `channel`, `source_url`, `enabled`, `created_at`
 
 ## Non-Functional Requirements
 
@@ -328,12 +345,12 @@ The system SHALL support containerized deployment via:
 
 | Category | Count |
 |----------|-------|
-| Discord Commands | 48 |
+| Discord Commands | 62 |
 | Regex Triggers | 7 |
-| Event Handlers | 24 |
-| Action Types | 57 |
+| Event Handlers | 26 |
+| Action Types | 69 |
 | API Endpoints | 32 |
-| Database Collections | 4 |
+| Database Collections | 5 |
 
 ---
 
