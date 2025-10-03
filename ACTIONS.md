@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-03 22:40:11 UTC*
+*Generated automatically on 2025-10-03 23:18:24 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 69 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 70 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -679,6 +679,19 @@ actions:
 
 ---
 
+#### `docs_link`
+
+**Function:** `docs_link_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "docs_link"
+    # Add configuration parameters here
+```
+
+---
+
 #### `get_modlogs`
 
 **Description:** Retrieve and display moderation logs for a specific user in condensed format.
@@ -1284,4 +1297,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 22:40:11 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 23:18:24 UTC*

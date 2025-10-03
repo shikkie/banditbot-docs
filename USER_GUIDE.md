@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-03 22:40:11 UTC*
+*Generated automatically on 2025-10-03 23:18:25 UTC*
 
 ## 📖 Table of Contents
 
@@ -18,7 +18,7 @@
 
 BanditBot is a sophisticated Discord moderation and utility bot designed for server management, entertainment, and automation. It features:
 
-- **62 custom commands** for various functions
+- **63 custom commands** for various functions
 - **7 automatic triggers** that respond to message patterns
 - **Advanced moderation tools** including sticky roles and timed actions
 - **Web-based configuration** for easy management
@@ -253,6 +253,9 @@ Extract and analyze document text using AI
 #### `?analyze_receipt`
 Extract and analyze receipt details with high accuracy
 
+#### `?docs`
+Get a link to view the bot documentation in the web interface
+
 #### `?ocr`
 Extract text from images using OCR (Optical Character Recognition)
 
@@ -462,10 +465,10 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-03 22:40:11 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-03 23:18:25 UTC*
 
 **Bot Statistics:**
-- Commands: 62
+- Commands: 63
 - Triggers: 7
 - Action Flows: 3
 - Event Handlers: 26

@@ -1,10 +1,10 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-03 22:40:10 UTC*
+*Generated automatically on 2025-10-03 23:18:23 UTC*
 
 ## Overview
 
-BanditBot features a sophisticated modular command system with 62 commands, 7 triggers, 3 action flows, and 26 event handlers.
+BanditBot features a sophisticated modular command system with 63 commands, 7 triggers, 3 action flows, and 26 event handlers.
 
 ## 🤖 Bot Commands
 
@@ -221,6 +221,19 @@ BanditBot features a sophisticated modular command system with 62 commands, 7 tr
 **Actions:**
 - **reply**: `Hah! GOTEEEEEM`
 - **message**: `https://obj.shitpost.sh/obj/9c4a3233-f091-408a-94b...`
+
+---
+
+### `?docs`
+
+**Description:** Get a link to view the bot documentation in the web interface
+
+**Usage:** `?docs`
+
+**Permissions:** Available to all users
+
+**Actions:**
+- **docs_link**
 
 ---
 
@@ -1393,6 +1406,7 @@ Automatic responses to Discord events:
 ## ⚙️ Bot Configuration
 
 - **modular_command_prefix:** `?`
+- **frontend_url:** `http://localhost:3000`
 - **collection_caps:** `{'delayQueue': {'ttl_days': 7}}`
 
 
@@ -1407,4 +1421,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-03 22:40:10 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-03 23:18:23 UTC*

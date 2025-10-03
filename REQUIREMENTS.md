@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-03 22:40:12 UTC
+**Generated:** 2025-10-03 23:18:25 UTC
 
 **Version:** Inferred from codebase analysis
 
@@ -46,7 +46,7 @@ The system SHALL use YAML configuration files to define:
 
 ## Functional Requirements
 
-### FR-CMD: Command System (62 commands)
+### FR-CMD: Command System (63 commands)
 
 #### FR-CMD-001: Modular Command Processing
 The system SHALL process commands defined in YAML configuration with:
@@ -62,7 +62,7 @@ The system SHALL support the following command categories:
 
 - **Moderation Commands** (7): `arrest`, `ban`, `kick`, `mute`, `timeout`
 - **Role Management** (6): `createrole`, `deleterole`, `force_sticky`, `show_sticky`, `stickyrole`
-- **Utility Commands** (49): `add_social_monitor`, `add_trigger`, `analyze_document`, `analyze_receipt`, `coon`
+- **Utility Commands** (50): `add_social_monitor`, `add_trigger`, `analyze_document`, `analyze_receipt`, `coon`
 
 ### FR-TRG: Regex Trigger System (7 triggers)
 
@@ -108,7 +108,7 @@ The system SHALL handle Discord events with configurable actions:
 - **on_member_remove**: Log members leaving the server
 - *(and 11 more)*
 
-### FR-ACT: Action System (69 actions)
+### FR-ACT: Action System (70 actions)
 
 #### FR-ACT-001: Action Registry
 The system SHALL provide a registry-based action system with decorated handlers.
@@ -152,7 +152,7 @@ The system SHALL support the following action types:
 - `conditional_chan_log`: Action handler: conditional_chan_log_action
 - `create_role`: Action handler: create_role_action
 - `del_trigger`: Action handler: del_trigger_action
-- *(and 43 more)*
+- *(and 44 more)*
 
 ## API Requirements
 
@@ -345,10 +345,10 @@ The system SHALL support containerized deployment via:
 
 | Category | Count |
 |----------|-------|
-| Discord Commands | 62 |
+| Discord Commands | 63 |
 | Regex Triggers | 7 |
 | Event Handlers | 26 |
-| Action Types | 69 |
+| Action Types | 70 |
 | API Endpoints | 32 |
 | Database Collections | 5 |
 
