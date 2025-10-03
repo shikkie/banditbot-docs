@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-03 00:11:21 UTC
+**Generated:** 2025-10-03 00:12:14 UTC
 
 **Version:** Inferred from codebase analysis
 
