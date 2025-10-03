@@ -1,6 +1,6 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-03 22:12:24 UTC*
+*Generated automatically on 2025-10-03 22:27:18 UTC*
 
 ## Overview
 
@@ -1284,4 +1284,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 22:12:24 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-03 22:27:18 UTC*
