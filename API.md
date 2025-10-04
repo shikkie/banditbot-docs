@@ -1,6 +1,6 @@
 # BanditBot API Documentation
 
-*Generated automatically on 2025-10-04 06:24:37 UTC*
+*Generated automatically on 2025-10-04 06:41:29 UTC*
 
 ## Overview
 
@@ -345,6 +345,30 @@ curl -X GET http://localhost:5000/api/discord/guilds/<guild_id>/members/<user_id
 
 ---
 
+#### `POST /api/backup/export`
+
+**Function:** `export_database_backup`
+
+**Example:**
+```bash
+curl -X POST http://localhost:5000/api/backup/export \\
+  -H "Content-Type: application/json" \\
+  -d '{"key": "value"}'
+```
+
+---
+
+#### `GET /api/backup/info`
+
+**Function:** `get_backup_info`
+
+**Example:**
+```bash
+curl -X GET http://localhost:5000/api/backup/info
+```
+
+---
+
 ## 📊 Database Schema
 
 The following collections are used by BanditBot:
@@ -514,4 +538,4 @@ Expected response:
 
 ---
 
-*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-04 06:24:37 UTC*
+*This documentation is automatically generated from the Flask application code. Last updated: 2025-10-04 06:41:29 UTC*

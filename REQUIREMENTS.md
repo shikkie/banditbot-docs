@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-04 06:24:38 UTC
+**Generated:** 2025-10-04 06:41:30 UTC
 
 **Version:** Inferred from codebase analysis
 
@@ -156,7 +156,7 @@ The system SHALL support the following action types:
 
 ## API Requirements
 
-### FR-API: RESTful API (32 endpoints)
+### FR-API: RESTful API (34 endpoints)
 
 #### FR-API-001: HTTP API Server
 The system SHALL provide a Flask-based REST API with:
@@ -199,6 +199,8 @@ The system SHALL provide a Flask-based REST API with:
 - `GET /api/discord/guilds/<guild_id>/channels`: Get channels from a specific guild.
 - `GET /api/discord/users/<user_id>`: Get information about a specific user.
 - `GET /api/discord/guilds/<guild_id>/members/<user_id>`: Get information about a specific member in a guild.
+- `POST /api/backup/export`: No description
+- `GET /api/backup/info`: Get information about available collections and their document counts.
 
 ## Data Management Requirements
 
@@ -349,7 +351,7 @@ The system SHALL support containerized deployment via:
 | Regex Triggers | 7 |
 | Event Handlers | 26 |
 | Action Types | 71 |
-| API Endpoints | 32 |
+| API Endpoints | 34 |
 | Database Collections | 5 |
 
 ---

@@ -1,6 +1,6 @@
 # BanditBot Slash Commands Documentation
 
-*Generated automatically on 2025-10-04 06:24:37 UTC*
+*Generated automatically on 2025-10-04 06:41:29 UTC*
 
 ## Overview
 
