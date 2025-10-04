@@ -1,6 +1,6 @@
 # BanditBot User Guide
 
-*Generated automatically on 2025-10-03 23:18:25 UTC*
+*Generated automatically on 2025-10-04 00:57:19 UTC*
 
 ## 📖 Table of Contents
 
@@ -26,14 +26,14 @@ BanditBot is a sophisticated Discord moderation and utility bot designed for ser
 
 ### Basic Usage
 
-All bot commands use the `?` prefix. For example:
-- `?help` - Show help information
-- `?joke` - Tell a random dad joke
-- `?mute @user 10m Spamming` - Mute a user for 10 minutes
+All bot commands use the `$` prefix. For example:
+- `$help` - Show help information
+- `$joke` - Tell a random dad joke
+- `$mute @user 10m Spamming` - Mute a user for 10 minutes
 
 ### Getting Help
 
-- Use `?help` for a list of available commands
+- Use `$help` for a list of available commands
 - Visit the web interface at `http://localhost:3000` for configuration
 - Check the documentation at `/docs/` for detailed information
 
@@ -43,7 +43,7 @@ All bot commands use the `?` prefix. For example:
 
 Commands follow this basic structure:
 ```
-?command_name <required_parameter> [optional_parameter]
+$command_name <required_parameter> [optional_parameter]
 ```
 
 - **Required parameters** are shown in `<angle brackets>`
@@ -65,256 +65,256 @@ Commands follow this basic structure:
 
 ```bash
 # Simple command with no parameters
-?joke
+$joke
 
 # Command with required parameter
-?whois @username
+$whois @username
 
 # Command with multiple parameters
-?mute @spammer 30m "Excessive spamming"
+$mute @spammer 30m "Excessive spamming"
 
 # Command with optional parameters
-?purge 10 "Cleaning up chat"
+$purge 10 "Cleaning up chat"
 ```
 
 ## 📋 Available Commands
 
 ### Moderation Commands
 
-#### `?add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
+#### `$add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
 Add a social media monitor to track RSS feeds, YouTube channels, or Twitter accounts
 *Requires: Admin, Moderator*
 
-#### `?add_trigger <name> <pattern> <actions>`
+#### `$add_trigger <name> <pattern> <actions>`
 Add a new regex trigger with specified actions
 *Requires: Moderator*
 
-#### `?arrest <user> [reason]`
+#### `$arrest <user> [reason]`
 Temporarily detain a user by assigning the 'detained' role with a fun arrest message
 *Requires: Moderator, Admin*
 
-#### `?ban <user> [reason]`
+#### `$ban <user> [reason]`
 Ban a user from the server
 *Requires: Admin*
 
-#### `?createrole [color] <name>`
+#### `$createrole [color] <name>`
 Create a new role in the server
 *Requires: Admin*
 
-#### `?defenestrate <user> [reason]`
+#### `$defenestrate <user> [reason]`
 Defenestrate (throw out the window) a user by assigning the 'detained' role
 *Requires: Moderator, Admin*
 
-#### `?del_trigger <name>`
+#### `$del_trigger <name>`
 Delete a regex trigger by name
 *Requires: Moderator*
 
-#### `?delay_msg <delay> [target_channel] <message>`
+#### `$delay_msg <delay> [target_channel] <message>`
 Schedule a delayed message to be sent to a channel
 *Requires: Moderator, Admin*
 
-#### `?deleterole <role>`
+#### `$deleterole <role>`
 Delete a role from the server
 *Requires: Admin*
 
-#### `?editlast <message>`
+#### `$editlast <message>`
 Edit the last bot message (for testing)
 *Requires: Moderator*
 
-#### `?force_sticky <user>`
+#### `$force_sticky <user>`
 Force apply all sticky roles for a user (testing and enforcement)
 *Requires: Moderator*
 
-#### `?gtfo <user> [reason]`
+#### `$gtfo <user> [reason]`
 Eject a user by assigning the 'detained' role with an ejection message
 *Requires: Moderator, Admin*
 
-#### `?kick <user> [reason]`
+#### `$kick <user> [reason]`
 Kick a user from the server
 *Requires: Moderator, Admin*
 
-#### `?list_action_flows`
+#### `$list_action_flows`
 List all configured action flows
 *Requires: Moderator*
 
-#### `?list_pattern_groups`
+#### `$list_pattern_groups`
 List all available pattern groups
 *Requires: Moderator*
 
-#### `?list_social_monitors`
+#### `$list_social_monitors`
 List all configured social media monitors for this server
 *Requires: Admin, Moderator*
 
-#### `?list_triggers`
+#### `$list_triggers`
 List all configured regex triggers and their actions
 *Requires: Moderator*
 
-#### `?lock [target_channel] [reason]`
+#### `$lock [target_channel] [reason]`
 Lock a text channel by removing send message permissions for @everyone role
 *Requires: Moderator, Admin*
 
-#### `?modlogs <user>`
+#### `$modlogs <user>`
 View the moderation logs for a specific user
 *Requires: Moderator*
 
-#### `?mute <duration> <user> <reason>`
+#### `$mute <duration> <user> <reason>`
 Temporarily mute a user by caching their roles, removing all roles, applying 'muted' role, with automatic restoration after specified duration
 *Requires: Moderator, Admin*
 
-#### `?note <user> <note>`
+#### `$note <user> <note>`
 Add a moderation note for a user (creates a log entry without taking action)
 *Requires: Moderator*
 
-#### `?pending_delays`
+#### `$pending_delays`
 Show pending delay queue actions
 *Requires: Moderator, Admin*
 
-#### `?pin`
+#### `$pin`
 Pin the last bot message in the channel
 *Requires: Moderator*
 
-#### `?purge <count> [reason]`
+#### `$purge <count> [reason]`
 Bulk delete messages from the current channel (supports up to 999 messages + command message, with automatic batching)
 *Requires: Moderator*
 
-#### `?release <user> [reason]`
+#### `$release <user> [reason]`
 Release a user by removing the 'detained' role
 *Requires: Moderator*
 
-#### `?remove_social_monitor <monitor_id>`
+#### `$remove_social_monitor <monitor_id>`
 Remove a social media monitor
 *Requires: Admin, Moderator*
 
-#### `?show_action_flow <flow_name>`
+#### `$show_action_flow <flow_name>`
 Show the detailed configuration of a specific action flow
 *Requires: Moderator*
 
-#### `?show_pattern_group <group_name>`
+#### `$show_pattern_group <group_name>`
 Show the details of a specific pattern group
 *Requires: Moderator*
 
-#### `?show_sticky <user>`
+#### `$show_sticky <user>`
 Show what sticky roles a user has configured
 *Requires: Moderator*
 
-#### `?show_trigger <trigger_name>`
+#### `$show_trigger <trigger_name>`
 Show the detailed configuration of a specific trigger
 *Requires: Moderator*
 
-#### `?slowmode <delay> [reason]`
+#### `$slowmode <delay> [reason]`
 Set channel slowmode delay
 *Requires: Moderator, Admin*
 
-#### `?test_replace <text> <find> <replace>`
+#### `$test_replace <text> <find> <replace>`
 Test the text_replace action with a simple example
 *Requires: Moderator*
 
-#### `?test_urlencode <teststring>`
+#### `$test_urlencode <teststring>`
 Test URL encoding functionality with custom string format
 *Requires: Moderator*
 
-#### `?test_user_nick <user>`
+#### `$test_user_nick <user>`
 Test user nickname extraction functionality
 *Requires: Moderator*
 
-#### `?thotbgone <user> [reason]`
+#### `$thotbgone <user> [reason]`
 Detain a user with a thot-be-gone themed message and assign the 'detained' role
 *Requires: Moderator, Admin*
 
-#### `?timeout <duration> <user> [reason]`
+#### `$timeout <duration> <user> [reason]`
 Timeout a user for a specified duration using Discord's built-in timeout feature
 *Requires: Moderator, Admin*
 
-#### `?toggle_social_monitor <monitor_id> [enabled]`
+#### `$toggle_social_monitor <monitor_id> [enabled]`
 Enable or disable a social media monitor
 *Requires: Admin, Moderator*
 
-#### `?unban <user> [reason]`
+#### `$unban <user> [reason]`
 Unban a user from the server by user ID
 *Requires: Admin*
 
-#### `?unlock [target_channel] [reason]`
+#### `$unlock [target_channel] [reason]`
 Unlock a text channel by restoring send message permissions for @everyone role
 *Requires: Moderator, Admin*
 
-#### `?unlock_all [reason]`
+#### `$unlock_all [reason]`
 Unlock all channels in the server by restoring @everyone send message permissions
 *Requires: Moderator, Admin*
 
-#### `?unmute <user> [reason]`
+#### `$unmute <user> [reason]`
 Immediately unmute a user by restoring their cached roles and clearing any pending delayed actions
 *Requires: Moderator, Admin*
 
 ### Utility Commands
 
-#### `?analyze_document`
+#### `$analyze_document`
 Extract and analyze document text using AI
 
-#### `?analyze_receipt`
+#### `$analyze_receipt`
 Extract and analyze receipt details with high accuracy
 
-#### `?docs`
+#### `$docs`
 Get a link to view the bot documentation in the web interface
 
-#### `?ocr`
+#### `$ocr`
 Extract text from images using OCR (Optical Character Recognition)
 
-#### `?ocr_google`
+#### `$ocr_google`
 Extract text from images using Google Cloud Vision (requires API key)
 
-#### `?ocr_grok`
+#### `$ocr_grok`
 Extract text from images using Grok Vision (requires API key)
 
-#### `?ocr_openai`
+#### `$ocr_openai`
 Extract text from images using OpenAI Vision (requires API key)
 
-#### `?roll <n> <d>`
+#### `$roll <n> <d>`
 Roll n number of d-sided dice and display results with sum
 
-#### `?stickyrole <role> <user> [reason]`
+#### `$stickyrole <role> <user> [reason]`
 Assign a role to a user that will be automatically re-assigned if they leave and rejoin the server
 
-#### `?stickyrole_rem <role> <user> [reason]`
+#### `$stickyrole_rem <role> <user> [reason]`
 Remove a sticky role from a user and delete it from the database
 
-#### `?touch`
+#### `$touch`
 A simple test command to verify the bot is responding
 
-#### `?transcribe`
+#### `$transcribe`
 Transcribe voice/audio messages to text using speech recognition
 
-#### `?tts <msg>`
+#### `$tts <msg>`
 Convert text to speech and reply with a voice message
 
-#### `?tts_british <msg>`
+#### `$tts_british <msg>`
 Convert text to speech with British English accent
 
-#### `?tts_slow <msg>`
+#### `$tts_slow <msg>`
 Convert text to speech with slow, clear pronunciation
 
-#### `?whois <user>`
+#### `$whois <user>`
 Display detailed information about a user including roles, join date, account age, and permissions
 
 ### Fun Commands
 
-#### `?coon`
+#### `$coon`
 Post a random cute raccoon image with accompanying text
 
-#### `?dn`
+#### `$dn`
 A fun 'deez nuts' meme response command
 
-#### `?grippysock <user>`
+#### `$grippysock <user>`
 Generate a Cinderella Grippy Sock meme URL with user and author nicknames
 
-#### `?joke`
+#### `$joke`
 Tell a random dad joke from the bot's collection
 
-#### `?worm`
+#### `$worm`
 Post a cute worm image with descriptive text
 
 ### Configuration Commands
 
-#### `?test_regex [flags] <pattern> <test_string>`
+#### `$test_regex [flags] <pattern> <test_string>`
 Test a regex pattern against a test string using the same pipeline as triggers
 
 
@@ -328,15 +328,15 @@ Sticky roles are automatically re-assigned to users when they rejoin the server.
 - **Punishment roles** - Ensures temporary restrictions persist
 
 Commands:
-- `?stickyrole <role> <user>` - Add a sticky role
-- `?stickyrole_rem <role> <user>` - Remove a sticky role
-- `?show_sticky <user>` - View a user's sticky roles
+- `$stickyrole <role> <user>` - Add a sticky role
+- `$stickyrole_rem <role> <user>` - Remove a sticky role
+- `$show_sticky <user>` - View a user's sticky roles
 
 ### Timed Actions
 
 Many moderation actions support automatic expiration:
-- `?mute <user> <duration>` - Temporary mutes with auto-unmute
-- `?timeout <user> <duration>` - Discord native timeouts
+- `$mute <user> <duration>` - Temporary mutes with auto-unmute
+- `$timeout <user> <duration>` - Discord native timeouts
 - Custom timed actions via the delay queue system
 
 ### Moderation Logging
@@ -348,12 +348,12 @@ All moderation actions are automatically logged:
 - **Reason** - Why the action was taken
 - **Timestamp** - When it occurred
 
-View logs with: `?modlogs <user>`
+View logs with: `$modlogs <user>`
 
 ### Advanced Features
 
-- **Bulk actions** - `?purge` for mass message deletion
-- **Channel management** - `?lock`/`?unlock` for channel restrictions
+- **Bulk actions** - `$purge` for mass message deletion
+- **Channel management** - `$lock`/`$unlock` for channel restrictions
 - **Role caching** - Automatic role backup during mutes
 - **Permission checking** - Role-based command access
 
@@ -465,7 +465,7 @@ BanditBot includes a comprehensive web interface for configuration management.
 
 ---
 
-*This user guide is automatically generated. Last updated: 2025-10-03 23:18:25 UTC*
+*This user guide is automatically generated. Last updated: 2025-10-04 00:57:19 UTC*
 
 **Bot Statistics:**
 - Commands: 63

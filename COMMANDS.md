@@ -1,6 +1,6 @@
 # BanditBot Commands Documentation
 
-*Generated automatically on 2025-10-03 23:18:23 UTC*
+*Generated automatically on 2025-10-04 00:57:17 UTC*
 
 ## Overview
 
@@ -10,11 +10,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ### Command Reference
 
-### `?add_social_monitor`
+### `$add_social_monitor`
 
 **Description:** Add a social media monitor to track RSS feeds, YouTube channels, or Twitter accounts
 
-**Usage:** `?add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
+**Usage:** `$add_social_monitor <monitor_id> <monitor_type> <source_url> <channel>`
 
 **Parameters:**
 - **monitor_id** (required) - *string* - Unique identifier for this monitor (e.g., 'python_blog', 'discord_youtube')
@@ -29,11 +29,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?add_trigger`
+### `$add_trigger`
 
 **Description:** Add a new regex trigger with specified actions
 
-**Usage:** `?add_trigger <name> <pattern> <actions>`
+**Usage:** `$add_trigger <name> <pattern> <actions>`
 
 **Parameters:**
 - **name** (required) - *string* - Unique name for the trigger
@@ -47,11 +47,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?analyze_document`
+### `$analyze_document`
 
 **Description:** Extract and analyze document text using AI
 
-**Usage:** `?analyze_document`
+**Usage:** `$analyze_document`
 
 **Permissions:** Available to all users
 
@@ -60,11 +60,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?analyze_receipt`
+### `$analyze_receipt`
 
 **Description:** Extract and analyze receipt details with high accuracy
 
-**Usage:** `?analyze_receipt`
+**Usage:** `$analyze_receipt`
 
 **Permissions:** Available to all users
 
@@ -73,11 +73,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?arrest`
+### `$arrest`
 
 **Description:** Temporarily detain a user by assigning the 'detained' role with a fun arrest message
 
-**Usage:** `?arrest <user> [reason]`
+**Usage:** `$arrest <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to arrest/detain (mention, username, or user ID)
@@ -92,11 +92,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?ban`
+### `$ban`
 
 **Description:** Ban a user from the server
 
-**Usage:** `?ban <user> [reason]`
+**Usage:** `$ban <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to ban (mention, username, or user ID)
@@ -109,11 +109,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?coon`
+### `$coon`
 
 **Description:** Post a random cute raccoon image with accompanying text
 
-**Usage:** `?coon`
+**Usage:** `$coon`
 
 **Permissions:** Available to all users
 
@@ -123,11 +123,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?createrole`
+### `$createrole`
 
 **Description:** Create a new role in the server
 
-**Usage:** `?createrole [color] <name>`
+**Usage:** `$createrole [color] <name>`
 
 **Parameters:**
 - **color** (optional) - *string* - Role color (hex code or color name)
@@ -140,11 +140,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?defenestrate`
+### `$defenestrate`
 
 **Description:** Defenestrate (throw out the window) a user by assigning the 'detained' role
 
-**Usage:** `?defenestrate <user> [reason]`
+**Usage:** `$defenestrate <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to defenestrate (mention, username, or user ID)
@@ -159,11 +159,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?del_trigger`
+### `$del_trigger`
 
 **Description:** Delete a regex trigger by name
 
-**Usage:** `?del_trigger <name>`
+**Usage:** `$del_trigger <name>`
 
 **Parameters:**
 - **name** (required) - *string* - Name of the trigger to delete
@@ -175,11 +175,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?delay_msg`
+### `$delay_msg`
 
 **Description:** Schedule a delayed message to be sent to a channel
 
-**Usage:** `?delay_msg <delay> [target_channel] <message>`
+**Usage:** `$delay_msg <delay> [target_channel] <message>`
 
 **Parameters:**
 - **delay** (required) - *string* - Delay duration (e.g., '5m', '1h', '30s')
@@ -194,11 +194,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?deleterole`
+### `$deleterole`
 
 **Description:** Delete a role from the server
 
-**Usage:** `?deleterole <role>`
+**Usage:** `$deleterole <role>`
 
 **Parameters:**
 - **role** (required) - *role* - The role to delete (mention or name)
@@ -210,11 +210,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?dn`
+### `$dn`
 
 **Description:** A fun 'deez nuts' meme response command
 
-**Usage:** `?dn`
+**Usage:** `$dn`
 
 **Permissions:** Available to all users
 
@@ -224,11 +224,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?docs`
+### `$docs`
 
 **Description:** Get a link to view the bot documentation in the web interface
 
-**Usage:** `?docs`
+**Usage:** `$docs`
 
 **Permissions:** Available to all users
 
@@ -237,11 +237,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?editlast`
+### `$editlast`
 
 **Description:** Edit the last bot message (for testing)
 
-**Usage:** `?editlast <message>`
+**Usage:** `$editlast <message>`
 
 **Parameters:**
 - **message** (required) - *string* - Collects all remaining arguments - New message content
@@ -253,11 +253,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?force_sticky`
+### `$force_sticky`
 
 **Description:** Force apply all sticky roles for a user (testing and enforcement)
 
-**Usage:** `?force_sticky <user>`
+**Usage:** `$force_sticky <user>`
 
 **Parameters:**
 - **user** (required) - *user* - User to enforce sticky roles for (mention, username, or user ID)
@@ -269,11 +269,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?grippysock`
+### `$grippysock`
 
 **Description:** Generate a Cinderella Grippy Sock meme URL with user and author nicknames
 
-**Usage:** `?grippysock <user>`
+**Usage:** `$grippysock <user>`
 
 **Parameters:**
 - **user** (required) - *user* - Target user for the meme
@@ -291,11 +291,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?gtfo`
+### `$gtfo`
 
 **Description:** Eject a user by assigning the 'detained' role with an ejection message
 
-**Usage:** `?gtfo <user> [reason]`
+**Usage:** `$gtfo <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to eject (mention, username, or user ID)
@@ -310,11 +310,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?joke`
+### `$joke`
 
 **Description:** Tell a random dad joke from the bot's collection
 
-**Usage:** `?joke`
+**Usage:** `$joke`
 
 **Permissions:** Available to all users
 
@@ -325,11 +325,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?kick`
+### `$kick`
 
 **Description:** Kick a user from the server
 
-**Usage:** `?kick <user> [reason]`
+**Usage:** `$kick <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to kick (mention, username, or user ID)
@@ -342,11 +342,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?list_action_flows`
+### `$list_action_flows`
 
 **Description:** List all configured action flows
 
-**Usage:** `?list_action_flows`
+**Usage:** `$list_action_flows`
 
 **Required Roles:** Moderator
 
@@ -355,11 +355,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?list_pattern_groups`
+### `$list_pattern_groups`
 
 **Description:** List all available pattern groups
 
-**Usage:** `?list_pattern_groups`
+**Usage:** `$list_pattern_groups`
 
 **Required Roles:** Moderator
 
@@ -368,11 +368,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?list_social_monitors`
+### `$list_social_monitors`
 
 **Description:** List all configured social media monitors for this server
 
-**Usage:** `?list_social_monitors`
+**Usage:** `$list_social_monitors`
 
 **Required Roles:** Admin, Moderator
 
@@ -381,11 +381,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?list_triggers`
+### `$list_triggers`
 
 **Description:** List all configured regex triggers and their actions
 
-**Usage:** `?list_triggers`
+**Usage:** `$list_triggers`
 
 **Required Roles:** Moderator
 
@@ -394,11 +394,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?lock`
+### `$lock`
 
 **Description:** Lock a text channel by removing send message permissions for @everyone role
 
-**Usage:** `?lock [target_channel] [reason]`
+**Usage:** `$lock [target_channel] [reason]`
 
 **Parameters:**
 - **target_channel** (optional) - *channel* - The channel to lock (mention, name, or ID). If not provided, locks the current channel
@@ -411,11 +411,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?modlogs`
+### `$modlogs`
 
 **Description:** View the moderation logs for a specific user
 
-**Usage:** `?modlogs <user>`
+**Usage:** `$modlogs <user>`
 
 **Parameters:**
 - **user** (required) - *user* - The user to view moderation logs for (mention, username, or user ID)
@@ -427,11 +427,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?mute`
+### `$mute`
 
 **Description:** Temporarily mute a user by caching their roles, removing all roles, applying 'muted' role, with automatic restoration after specified duration
 
-**Usage:** `?mute <duration> <user> <reason>`
+**Usage:** `$mute <duration> <user> <reason>`
 
 **Parameters:**
 - **duration** (required) - *string* - Duration (e.g., "5m", "1h", "30s")
@@ -450,11 +450,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?note`
+### `$note`
 
 **Description:** Add a moderation note for a user (creates a log entry without taking action)
 
-**Usage:** `?note <user> <note>`
+**Usage:** `$note <user> <note>`
 
 **Parameters:**
 - **user** (required) - *user* - The user to add a moderation note for (mention, username, or user ID)
@@ -468,11 +468,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?ocr`
+### `$ocr`
 
 **Description:** Extract text from images using OCR (Optical Character Recognition)
 
-**Usage:** `?ocr`
+**Usage:** `$ocr`
 
 **Permissions:** Available to all users
 
@@ -481,11 +481,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?ocr_google`
+### `$ocr_google`
 
 **Description:** Extract text from images using Google Cloud Vision (requires API key)
 
-**Usage:** `?ocr_google`
+**Usage:** `$ocr_google`
 
 **Permissions:** Available to all users
 
@@ -494,11 +494,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?ocr_grok`
+### `$ocr_grok`
 
 **Description:** Extract text from images using Grok Vision (requires API key)
 
-**Usage:** `?ocr_grok`
+**Usage:** `$ocr_grok`
 
 **Permissions:** Available to all users
 
@@ -507,11 +507,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?ocr_openai`
+### `$ocr_openai`
 
 **Description:** Extract text from images using OpenAI Vision (requires API key)
 
-**Usage:** `?ocr_openai`
+**Usage:** `$ocr_openai`
 
 **Permissions:** Available to all users
 
@@ -520,11 +520,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?pending_delays`
+### `$pending_delays`
 
 **Description:** Show pending delay queue actions
 
-**Usage:** `?pending_delays`
+**Usage:** `$pending_delays`
 
 **Required Roles:** Moderator, Admin
 
@@ -533,11 +533,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?pin`
+### `$pin`
 
 **Description:** Pin the last bot message in the channel
 
-**Usage:** `?pin`
+**Usage:** `$pin`
 
 **Required Roles:** Moderator
 
@@ -546,11 +546,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?purge`
+### `$purge`
 
 **Description:** Bulk delete messages from the current channel (supports up to 999 messages + command message, with automatic batching)
 
-**Usage:** `?purge <count> [reason]`
+**Usage:** `$purge <count> [reason]`
 
 **Parameters:**
 - **count** (required) - *integer* - Number of messages to delete BEFORE the command (1-999). The command message is automatically included, so total deletion will be count+1. For counts >100, the bot will automatically batch the operation
@@ -563,11 +563,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?release`
+### `$release`
 
 **Description:** Release a user by removing the 'detained' role
 
-**Usage:** `?release <user> [reason]`
+**Usage:** `$release <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to release (mention, username, or user ID)
@@ -581,11 +581,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?remove_social_monitor`
+### `$remove_social_monitor`
 
 **Description:** Remove a social media monitor
 
-**Usage:** `?remove_social_monitor <monitor_id>`
+**Usage:** `$remove_social_monitor <monitor_id>`
 
 **Parameters:**
 - **monitor_id** (required) - *string* - ID of the monitor to remove
@@ -597,11 +597,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?roll`
+### `$roll`
 
 **Description:** Roll n number of d-sided dice and display results with sum
 
-**Usage:** `?roll <n> <d>`
+**Usage:** `$roll <n> <d>`
 
 **Parameters:**
 - **n** (required) - *integer* - Number of dice to roll (1-100)
@@ -614,11 +614,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?show_action_flow`
+### `$show_action_flow`
 
 **Description:** Show the detailed configuration of a specific action flow
 
-**Usage:** `?show_action_flow <flow_name>`
+**Usage:** `$show_action_flow <flow_name>`
 
 **Parameters:**
 - **flow_name** (required) - *string* - Name of the action flow to display
@@ -630,11 +630,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?show_pattern_group`
+### `$show_pattern_group`
 
 **Description:** Show the details of a specific pattern group
 
-**Usage:** `?show_pattern_group <group_name>`
+**Usage:** `$show_pattern_group <group_name>`
 
 **Parameters:**
 - **group_name** (required) - *string* - Name of the pattern group to display
@@ -646,11 +646,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?show_sticky`
+### `$show_sticky`
 
 **Description:** Show what sticky roles a user has configured
 
-**Usage:** `?show_sticky <user>`
+**Usage:** `$show_sticky <user>`
 
 **Parameters:**
 - **user** (required) - *user* - User to show sticky roles for (mention, username, or user ID)
@@ -662,11 +662,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?show_trigger`
+### `$show_trigger`
 
 **Description:** Show the detailed configuration of a specific trigger
 
-**Usage:** `?show_trigger <trigger_name>`
+**Usage:** `$show_trigger <trigger_name>`
 
 **Parameters:**
 - **trigger_name** (required) - *string* - Name of the trigger to display
@@ -678,11 +678,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?slowmode`
+### `$slowmode`
 
 **Description:** Set channel slowmode delay
 
-**Usage:** `?slowmode <delay> [reason]`
+**Usage:** `$slowmode <delay> [reason]`
 
 **Parameters:**
 - **delay** (required) - *integer* - Slowmode delay in seconds (0-21600, 0 disables)
@@ -695,11 +695,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?stickyrole`
+### `$stickyrole`
 
 **Description:** Assign a role to a user that will be automatically re-assigned if they leave and rejoin the server
 
-**Usage:** `?stickyrole <role> <user> [reason]`
+**Usage:** `$stickyrole <role> <user> [reason]`
 
 **Parameters:**
 - **role** (required) - *role* - The role to assign as a sticky role (mention, role name, or role ID)
@@ -715,11 +715,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?stickyrole_rem`
+### `$stickyrole_rem`
 
 **Description:** Remove a sticky role from a user and delete it from the database
 
-**Usage:** `?stickyrole_rem <role> <user> [reason]`
+**Usage:** `$stickyrole_rem <role> <user> [reason]`
 
 **Parameters:**
 - **role** (required) - *role* - The sticky role to remove (mention, role name, or role ID)
@@ -735,11 +735,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?test_regex`
+### `$test_regex`
 
 **Description:** Test a regex pattern against a test string using the same pipeline as triggers
 
-**Usage:** `?test_regex [flags] <pattern> <test_string>`
+**Usage:** `$test_regex [flags] <pattern> <test_string>`
 
 **Parameters:**
 - **flags** (optional) - *string* - Optional regex flags (i=case insensitive, m=multiline, s=dotall)
@@ -753,11 +753,11 @@ BanditBot features a sophisticated modular command system with 63 commands, 7 tr
 
 ---
 
-### `?test_replace`
+### `$test_replace`
 
 **Description:** Test the text_replace action with a simple example
 
-**Usage:** `?test_replace <text> <find> <replace>`
+**Usage:** `$test_replace <text> <find> <replace>`
 
 **Parameters:**
 - **text** (required) - *string* - Text to perform replacement on
@@ -773,11 +773,11 @@ Result: {result}`
 
 ---
 
-### `?test_urlencode`
+### `$test_urlencode`
 
 **Description:** Test URL encoding functionality with custom string format
 
-**Usage:** `?test_urlencode <teststring>`
+**Usage:** `$test_urlencode <teststring>`
 
 **Parameters:**
 - **teststring** (required) - *string* - Collects all remaining arguments - String to URL encode
@@ -790,11 +790,11 @@ Result: {result}`
 
 ---
 
-### `?test_user_nick`
+### `$test_user_nick`
 
 **Description:** Test user nickname extraction functionality
 
-**Usage:** `?test_user_nick <user>`
+**Usage:** `$test_user_nick <user>`
 
 **Parameters:**
 - **user** (required) - *user* - User to get nickname for
@@ -811,11 +811,11 @@ Result: {result}`
 
 ---
 
-### `?thotbgone`
+### `$thotbgone`
 
 **Description:** Detain a user with a thot-be-gone themed message and assign the 'detained' role
 
-**Usage:** `?thotbgone <user> [reason]`
+**Usage:** `$thotbgone <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to detain (mention, username, or user ID)
@@ -830,11 +830,11 @@ Result: {result}`
 
 ---
 
-### `?timeout`
+### `$timeout`
 
 **Description:** Timeout a user for a specified duration using Discord's built-in timeout feature
 
-**Usage:** `?timeout <duration> <user> [reason]`
+**Usage:** `$timeout <duration> <user> [reason]`
 
 **Parameters:**
 - **duration** (required) - *string* - Duration of the timeout (e.g., 5m for 5 minutes, 1h for 1 hour, 2d for 2 days). Supports s/m/h/d units
@@ -850,11 +850,11 @@ Result: {result}`
 
 ---
 
-### `?toggle_social_monitor`
+### `$toggle_social_monitor`
 
 **Description:** Enable or disable a social media monitor
 
-**Usage:** `?toggle_social_monitor <monitor_id> [enabled]`
+**Usage:** `$toggle_social_monitor <monitor_id> [enabled]`
 
 **Parameters:**
 - **monitor_id** (required) - *string* - ID of the monitor to toggle
@@ -867,11 +867,11 @@ Result: {result}`
 
 ---
 
-### `?touch`
+### `$touch`
 
 **Description:** A simple test command to verify the bot is responding
 
-**Usage:** `?touch`
+**Usage:** `$touch`
 
 **Permissions:** Available to all users
 
@@ -880,11 +880,11 @@ Result: {result}`
 
 ---
 
-### `?transcribe`
+### `$transcribe`
 
 **Description:** Transcribe voice/audio messages to text using speech recognition
 
-**Usage:** `?transcribe`
+**Usage:** `$transcribe`
 
 **Permissions:** Available to all users
 
@@ -893,11 +893,11 @@ Result: {result}`
 
 ---
 
-### `?tts`
+### `$tts`
 
 **Description:** Convert text to speech and reply with a voice message
 
-**Usage:** `?tts <msg>`
+**Usage:** `$tts <msg>`
 
 **Parameters:**
 - **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
@@ -909,11 +909,11 @@ Result: {result}`
 
 ---
 
-### `?tts_british`
+### `$tts_british`
 
 **Description:** Convert text to speech with British English accent
 
-**Usage:** `?tts_british <msg>`
+**Usage:** `$tts_british <msg>`
 
 **Parameters:**
 - **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
@@ -925,11 +925,11 @@ Result: {result}`
 
 ---
 
-### `?tts_slow`
+### `$tts_slow`
 
 **Description:** Convert text to speech with slow, clear pronunciation
 
-**Usage:** `?tts_slow <msg>`
+**Usage:** `$tts_slow <msg>`
 
 **Parameters:**
 - **msg** (required) - *string* - Collects all remaining arguments - The text to convert to speech
@@ -941,11 +941,11 @@ Result: {result}`
 
 ---
 
-### `?unban`
+### `$unban`
 
 **Description:** Unban a user from the server by user ID
 
-**Usage:** `?unban <user> [reason]`
+**Usage:** `$unban <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *string* - The user ID to unban
@@ -958,11 +958,11 @@ Result: {result}`
 
 ---
 
-### `?unlock`
+### `$unlock`
 
 **Description:** Unlock a text channel by restoring send message permissions for @everyone role
 
-**Usage:** `?unlock [target_channel] [reason]`
+**Usage:** `$unlock [target_channel] [reason]`
 
 **Parameters:**
 - **target_channel** (optional) - *channel* - The channel to unlock (mention, name, or ID). If not provided, unlocks the current channel
@@ -975,11 +975,11 @@ Result: {result}`
 
 ---
 
-### `?unlock_all`
+### `$unlock_all`
 
 **Description:** Unlock all channels in the server by restoring @everyone send message permissions
 
-**Usage:** `?unlock_all [reason]`
+**Usage:** `$unlock_all [reason]`
 
 **Parameters:**
 - **reason** (optional) - *string* - Collects all remaining arguments - Reason for unlocking all channels (will be logged)
@@ -991,11 +991,11 @@ Result: {result}`
 
 ---
 
-### `?unmute`
+### `$unmute`
 
 **Description:** Immediately unmute a user by restoring their cached roles and clearing any pending delayed actions
 
-**Usage:** `?unmute <user> [reason]`
+**Usage:** `$unmute <user> [reason]`
 
 **Parameters:**
 - **user** (required) - *user* - The user to unmute (mention, username, or user ID)
@@ -1011,11 +1011,11 @@ Result: {result}`
 
 ---
 
-### `?whois`
+### `$whois`
 
 **Description:** Display detailed information about a user including roles, join date, account age, and permissions
 
-**Usage:** `?whois <user>`
+**Usage:** `$whois <user>`
 
 **Parameters:**
 - **user** (required) - *user* - The user to get detailed information about (mention, username, or user ID)
@@ -1027,11 +1027,11 @@ Result: {result}`
 
 ---
 
-### `?worm`
+### `$worm`
 
 **Description:** Post a cute worm image with descriptive text
 
-**Usage:** `?worm`
+**Usage:** `$worm`
 
 **Permissions:** Available to all users
 
@@ -1405,7 +1405,7 @@ Automatic responses to Discord events:
 
 ## ⚙️ Bot Configuration
 
-- **modular_command_prefix:** `?`
+- **modular_command_prefix:** `$`
 - **frontend_url:** `http://localhost:3000`
 - **collection_caps:** `{'delayQueue': {'ttl_days': 7}}`
 
@@ -1421,4 +1421,4 @@ For more information about using BanditBot:
 
 ---
 
-*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-03 23:18:23 UTC*
+*This documentation is automatically generated from `config/modular_commands.yml`. Last updated: 2025-10-04 00:57:17 UTC*
