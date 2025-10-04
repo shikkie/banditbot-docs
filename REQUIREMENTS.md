@@ -1,6 +1,6 @@
 # BanditBot Software Requirements Specification
 
-**Generated:** 2025-10-04 05:30:41 UTC
+**Generated:** 2025-10-04 06:24:38 UTC
 
 **Version:** Inferred from codebase analysis
 
@@ -108,7 +108,7 @@ The system SHALL handle Discord events with configurable actions:
 - **on_member_remove**: Log members leaving the server
 - *(and 11 more)*
 
-### FR-ACT: Action System (70 actions)
+### FR-ACT: Action System (71 actions)
 
 #### FR-ACT-001: Action Registry
 The system SHALL provide a registry-based action system with decorated handlers.
@@ -145,14 +145,14 @@ The system SHALL support the following action types:
 - `add_social_monitor`: Action handler: add_social_monitor_action
 - `add_trigger`: Action handler: add_trigger_action
 - `ban`: Action handler: ban_action
+- `blackjack_game`: Action handler: blackjack_game_action
 - `chan_log`: Action handler: chan_log_action
 - `check_reaction_threshold`: Action handler: check_reaction_threshold_action
 - `clear_delayed_roles`: Action handler: clear_delayed_roles_action
 - `commands_by_role`: Action handler: commands_by_role_action
 - `conditional_chan_log`: Action handler: conditional_chan_log_action
 - `create_role`: Action handler: create_role_action
-- `del_trigger`: Action handler: del_trigger_action
-- *(and 44 more)*
+- *(and 45 more)*
 
 ## API Requirements
 
@@ -348,7 +348,7 @@ The system SHALL support containerized deployment via:
 | Discord Commands | 63 |
 | Regex Triggers | 7 |
 | Event Handlers | 26 |
-| Action Types | 70 |
+| Action Types | 71 |
 | API Endpoints | 32 |
 | Database Collections | 5 |
 

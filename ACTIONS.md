@@ -1,10 +1,10 @@
 # BanditBot Action System Documentation
 
-*Generated automatically on 2025-10-04 05:30:40 UTC*
+*Generated automatically on 2025-10-04 06:24:37 UTC*
 
 ## Overview
 
-BanditBot uses a sophisticated action system with 70 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
+BanditBot uses a sophisticated action system with 71 registered actions. Actions are the building blocks of commands, triggers, and event handlers.
 
 ## 🎬 Action Registry
 
@@ -1071,6 +1071,25 @@ actions:
 
 ### Other Actions
 
+#### `blackjack_game`
+
+**Description:** Start an interactive blackjack game with betting and button controls.
+
+**Configuration:**
+- starting_money: Starting money amount (default: 100)
+- bet_amount: Bet amount per hand (default: 1)
+
+**Function:** `blackjack_game_action`
+
+**Usage:**
+```yaml
+actions:
+  - type: "blackjack_game"
+    # Add configuration parameters here
+```
+
+---
+
 #### `conditional_chan_log`
 
 **Function:** `conditional_chan_log_action`
@@ -1297,4 +1316,4 @@ Actions can be tested using the development interface:
 
 ---
 
-*This documentation is automatically generated from the action registry. Last updated: 2025-10-04 05:30:40 UTC*
+*This documentation is automatically generated from the action registry. Last updated: 2025-10-04 06:24:37 UTC*
